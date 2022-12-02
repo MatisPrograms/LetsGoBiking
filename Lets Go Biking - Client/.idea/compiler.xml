@@ -9,8 +9,5 @@
         <module name="Lets_Go_Biking_Client" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Lets Go Biking - Client" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5606a6b0-702d-43f7-94f3-9c764a2f9bbc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/Let's Go Biking/FileContentIndex/207d8af2-cc15-4574-ad4e-716c660c81bf.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/Let's Go Biking/FileContentIndex/2ace9f83-411c-4a58-84af-1387672def98.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/Let's Go Biking/FileContentIndex/7ac25f21-d8f8-42af-9ff5-5e15861c4b60.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/Let's Go Biking/FileContentIndex/8a287b2f-7725-485e-97ec-e9e61e80532a.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/Let's Go Biking/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/Let's Go Biking/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/SOAP server/FileContentIndex/5d5ddc09-fc2c-4ecd-a488-09c8d6eb3e88.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/.vs/SOAP server/FileContentIndex/read.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Let's Go Biking.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Let's Go Biking.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/bin/Debug/Proxy.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy Server.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy Server.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy Server.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy Server.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy Server/obj/Debug/Proxy.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/bin/Debug/Proxy WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/bin/Debug/Proxy WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/bin/Debug/Proxy WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/bin/Debug/Proxy WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/Proxy WCF/obj/Debug/Proxy WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Let's Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Lets Go Biking - Client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/unice/polytech/map/GeoMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/unice/polytech/map/GeoMap.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2INNKwCR12R9TY6fAspO4HemFQl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.unice.polytech.Main" />
+      <module name="Lets_Go_Biking_Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.unice.polytech.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5606a6b0-702d-43f7-94f3-9c764a2f9bbc" name="Changes" comment="" />
+      <created>1670018025596</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670018025596</updated>
+      <workItem from="1670018027790" duration="56000" />
+      <workItem from="1670018545419" duration="107000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

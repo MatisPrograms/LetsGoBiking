@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using Newtonsoft.Json;
 using Proxy_WCF;
 
 namespace Proxy_Server

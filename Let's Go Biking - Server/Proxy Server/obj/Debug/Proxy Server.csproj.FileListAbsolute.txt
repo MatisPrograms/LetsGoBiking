@@ -10,3 +10,15 @@ C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy\obj\Debug\Proxy Server.csproj.CopyComplete
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy\obj\Debug\Proxy.exe
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy\obj\Debug\Proxy.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\bin\Debug\Proxy.exe
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\bin\Debug\Proxy.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\bin\Debug\Proxy WCF.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\bin\Debug\Proxy WCF.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\obj\Debug\Proxy Server.csproj.AssemblyReference.cache
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\obj\Debug\Proxy Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\obj\Debug\Proxy Server.csproj.CoreCompileInputs.cache
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\obj\Debug\Proxy Server.csproj.CopyComplete
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\obj\Debug\Proxy.exe
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\Proxy Server\obj\Debug\Proxy.pdb

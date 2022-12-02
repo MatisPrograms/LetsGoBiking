@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAP Server", "SOAP Server\SOAP Server.csproj", "{4425097D-435D-48AD-867B-E24EC10EA0A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy Server", "Proxy\Proxy Server.csproj", "{23149FBC-585D-47A0-9962-F851C828C303}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy Server", "Proxy Server\Proxy Server.csproj", "{23149FBC-585D-47A0-9962-F851C828C303}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAP WCF", "SOAP WCF\SOAP WCF.csproj", "{56BC00ED-D888-4086-A9FE-04807147D14F}"
 EndProject
