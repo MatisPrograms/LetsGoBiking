@@ -8,22 +8,18 @@ import fr.unice.polytech.services.RoutingService;
 import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.Waypoint;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         // opening a java swing map
-        GeoMap map = new GeoMap();
+        new GeoMap();
+    }
 
-        // Waiting for map to notify
-        //noinspection SynchronizationOnLocalVariableOrMethodParameter
-        synchronized (map) {
-            map.wait();
-        }
+    public static void calculateItinerary(GeoMap map) {
 
         // Getting list of wanted waypoints
         List<Waypoint> waypoints = map.getWaypoints().waypoints().keySet().stream().toList();
@@ -52,16 +48,17 @@ public class Main {
 
         try {
             Itinerary itinerary = new RoutingService().getWSHttpBindingIRoutingService().getItineraryList(directions);
-            System.out.println("Directions received from server:" + itinerary);
+            System.out.println("Directions received from server:");
+            System.out.println("Total distance: " + String.format("%.2f", itinerary.getDistance() / 1000) + "km ↑" + String.format("%.2f", itinerary.getAscend()) + "m ↓" + String.format("%.2f", itinerary.getDescend()) + "m");
+            System.out.println("Total time: " + String.format("%.2f", itinerary.getDuration() / 1000 / 60) + "min");
+
+            // Displaying directions
+            map.showDirections(itinerary);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             map.dispose();
             System.exit(-1);
         }
-
-        // Displaying directions
-        List<Object> data = new ArrayList<>();
-        map.showDirections(data);
     }
 
     private static GeoPosition geoPositionManualInput(String text) {

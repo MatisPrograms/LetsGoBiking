@@ -1,5 +1,8 @@
 package fr.unice.polytech.map;
 
+import fr.unice.polytech.Main;
+import fr.unice.polytech.services.GeoCoordinate;
+import fr.unice.polytech.services.Itinerary;
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.OSMTileFactoryInfo;
 import org.jxmapviewer.VirtualEarthTileFactoryInfo;
@@ -11,6 +14,8 @@ import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.geom.Path2D;
+import java.awt.geom.Point2D;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +32,7 @@ public class GeoMap extends JFrame {
     private final JButton calculateRoute = new JButton("Calculate Route");
     private final Waypoints waypoints = new Waypoints();
     private boolean addingWaypoint = false;
+    private Itinerary itinerary;
 
     public GeoMap() {
         super("GeoMap - Choisir un point de départ et d'arrivée");
@@ -71,7 +77,7 @@ public class GeoMap extends JFrame {
                     Waypoint waypoint = new DefaultWaypoint(jXMapViewer.convertPointToGeoPosition(e.getPoint()));
                     waypoints.add(waypoint);
                     jXMapViewer.add(waypoints.waypoints().get(waypoint));
-                    update(getGraphics());
+                    jXMapViewer.repaint();
                 }
             }
 
@@ -162,28 +168,35 @@ public class GeoMap extends JFrame {
         this.pack();
     }
 
-    private void addWaypoint(ActionEvent actionEvent) {
-        this.addingWaypoint = !this.addingWaypoint;
-        if (this.addingWaypoint) {
-            this.addWaypoint.setBackground(Color.GREEN);
+    private void waypointButtonColour(boolean addingWaypoint) {
+        if (addingWaypoint) {
+            this.addWaypoint.setBackground(new Color(152, 251, 152));
         } else {
             this.addWaypoint.setBackground(null);
         }
-    }
-
-    private void clearWaypoints(ActionEvent actionEvent) {
-        Arrays.stream(this.jXMapViewer.getComponents()).filter(c -> c.getCursor().getType() == Cursor.HAND_CURSOR).forEach(this.jXMapViewer::remove);
-        this.waypoints.waypoints().clear();
         this.update(this.getGraphics());
     }
 
-    private void calculateRoute(ActionEvent actionEvent) {
-        this.setVisible(false);
+    private void addWaypoint(ActionEvent actionEvent) {
+        this.addingWaypoint = !this.addingWaypoint;
+        this.waypointButtonColour(this.addingWaypoint);
+    }
 
-        // notify main thread to start calculating
-        synchronized (this) {
-            this.notify();
-        }
+    private void clearWaypoints(ActionEvent actionEvent) {
+        new Thread(() -> {
+            this.clearWaypoints.setBackground(new Color(255, 104, 99));
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            this.clearWaypoints.setBackground(null);
+        }).start();
+
+        Arrays.stream(this.jXMapViewer.getComponents()).filter(c -> c.getCursor().getType() == Cursor.HAND_CURSOR).forEach(this.jXMapViewer::remove);
+        this.waypoints.waypoints().clear();
+        this.itinerary = null;
+        this.update(this.getGraphics());
     }
 
     private void changeMapMode(ActionEvent actionEvent) {
@@ -198,14 +211,70 @@ public class GeoMap extends JFrame {
         this.jXMapViewer.setTileFactory(new DefaultTileFactory(info));
     }
 
+    private void calculateRoute(ActionEvent actionEvent) {
+        new Thread(() -> {
+            this.calculateRoute.setBackground(new Color(250, 200, 130));
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            this.calculateRoute.setBackground(null);
+        }).start();
+
+        this.addingWaypoint = false;
+        this.waypointButtonColour(false);
+
+        if (this.waypoints.waypoints().isEmpty()) this.setVisible(false);
+        Main.calculateItinerary(this);
+        this.update(this.getGraphics());
+    }
+
+    public void showDirections(Itinerary itinerary) {
+        this.setTitle(this.getTitle() + " | Distance: " + String.format("%.2f", itinerary.getDistance() / 1000) + "Km");
+        if (!this.isVisible()) this.setVisible(true);
+
+        this.itinerary = itinerary;
+        this.update(this.getGraphics());
+    }
+
+    private void drawRoute(Path2D path, List<GeoCoordinate> coordinateList) {
+        boolean first = true;
+        for (GeoCoordinate coordinate : coordinateList) {
+            Point2D point = this.jXMapViewer.convertGeoPositionToPoint(new GeoPosition(coordinate.getLatitude(), coordinate.getLongitude()));
+            point.setLocation(point.getX(), point.getY());
+            if (first) {
+                path.moveTo(point.getX(), point.getY());
+                first = false;
+            } else {
+                path.lineTo(point.getX(), point.getY());
+            }
+        }
+    }
+
     public Waypoints getWaypoints() {
         return waypoints;
     }
 
-    public void showDirections(List<Object> data) {
-        this.setVisible(true);
-        this.setTitle(this.getTitle() + " | Distance: 0Km");
-//        this.jXMapViewer.setOverlayPainter();
-        this.update(this.getGraphics());
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        if (this.itinerary != null) {
+            // Set up graphics
+            Graphics2D g2d = (Graphics2D) g.create();
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+            // Set up route
+            Path2D path = new Path2D.Double();
+            this.drawRoute(path, this.itinerary.getCoordinates().getValue().getGeoCoordinate());
+
+            // Set up colour
+            g2d.setColor(new Color(0, 176, 255));
+            g2d.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+
+            // Draw
+            g2d.draw(path);
+            g2d.dispose();
+        }
     }
 }
