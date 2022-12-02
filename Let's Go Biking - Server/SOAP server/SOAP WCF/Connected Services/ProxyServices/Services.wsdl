@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Services" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IJCDecauxAPI_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IOpenStreetMapAPI_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Proxy_WCF" />
+      <xsd:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Device.Location" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IJCDecauxAPI_Contracts_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contracts" />
+  </wsdl:message>
+  <wsdl:message name="IJCDecauxAPI_Contracts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ContractsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJCDecauxAPI_Stations_InputMessage">
+    <wsdl:part name="parameters" element="tns:Stations" />
+  </wsdl:message>
+  <wsdl:message name="IJCDecauxAPI_Stations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJCDecauxAPI_Station_InputMessage">
+    <wsdl:part name="parameters" element="tns:Station" />
+  </wsdl:message>
+  <wsdl:message name="IJCDecauxAPI_Station_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_Querry_InputMessage">
+    <wsdl:part name="parameters" element="tns:Querry" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_Querry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuerryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_GeoCoordinate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeoCoordinate" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_GeoCoordinate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeoCoordinateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_Route_InputMessage">
+    <wsdl:part name="parameters" element="tns:Route" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_Route_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RouteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IJCDecauxAPI">
+    <wsdl:operation name="Contracts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxAPI/Contracts" message="tns:IJCDecauxAPI_Contracts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxAPI/ContractsResponse" message="tns:IJCDecauxAPI_Contracts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Stations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxAPI/Stations" message="tns:IJCDecauxAPI_Stations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxAPI/StationsResponse" message="tns:IJCDecauxAPI_Stations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Station">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxAPI/Station" message="tns:IJCDecauxAPI_Station_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxAPI/StationResponse" message="tns:IJCDecauxAPI_Station_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOpenStreetMapAPI">
+    <wsdl:operation name="Querry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/Querry" message="tns:IOpenStreetMapAPI_Querry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/QuerryResponse" message="tns:IOpenStreetMapAPI_Querry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeoCoordinate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/GeoCoordinate" message="tns:IOpenStreetMapAPI_GeoCoordinate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/GeoCoordinateResponse" message="tns:IOpenStreetMapAPI_GeoCoordinate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Route">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/Route" message="tns:IOpenStreetMapAPI_Route_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/RouteResponse" message="tns:IOpenStreetMapAPI_Route_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IJCDecauxAPI" type="tns:IJCDecauxAPI">
+    <wsp:PolicyReference URI="#WSHttpBinding_IJCDecauxAPI_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Contracts">
+      <soap12:operation soapAction="http://tempuri.org/IJCDecauxAPI/Contracts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Stations">
+      <soap12:operation soapAction="http://tempuri.org/IJCDecauxAPI/Stations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Station">
+      <soap12:operation soapAction="http://tempuri.org/IJCDecauxAPI/Station" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IOpenStreetMapAPI" type="tns:IOpenStreetMapAPI">
+    <wsp:PolicyReference URI="#WSHttpBinding_IOpenStreetMapAPI_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Querry">
+      <soap12:operation soapAction="http://tempuri.org/IOpenStreetMapAPI/Querry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeoCoordinate">
+      <soap12:operation soapAction="http://tempuri.org/IOpenStreetMapAPI/GeoCoordinate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Route">
+      <soap12:operation soapAction="http://tempuri.org/IOpenStreetMapAPI/Route" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Services">
+    <wsdl:port name="WSHttpBinding_IJCDecauxAPI" binding="tns:WSHttpBinding_IJCDecauxAPI">
+      <soap12:address location="http://localhost:8088/ProxyService/JCDecaux" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8088/ProxyService/JCDecaux</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IOpenStreetMapAPI" binding="tns:WSHttpBinding_IOpenStreetMapAPI">
+      <soap12:address location="http://localhost:8088/ProxyService/OpenStreetMap" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8088/ProxyService/OpenStreetMap</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

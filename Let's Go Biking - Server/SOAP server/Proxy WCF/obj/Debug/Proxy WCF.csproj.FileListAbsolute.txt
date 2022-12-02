@@ -1,0 +1,9 @@
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\bin\Debug\Proxy WCF.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\bin\Debug\Proxy WCF.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\obj\Debug\Proxy WCF.csproj.AssemblyReference.cache
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\obj\Debug\Proxy WCF.csproj.CoreCompileInputs.cache
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\obj\Debug\Proxy WCF.csproj.CopyComplete
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\obj\Debug\Proxy WCF.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Projet\Let's Go Biking - Server\SOAP server\Proxy WCF\obj\Debug\Proxy WCF.pdb
