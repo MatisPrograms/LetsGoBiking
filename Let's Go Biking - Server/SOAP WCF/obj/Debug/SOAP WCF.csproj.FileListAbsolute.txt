@@ -18,3 +18,8 @@ C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\obj\Debug\SOAP WCF.csproj.CopyComplete
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\obj\Debug\SOAP WCF.dll
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\obj\Debug\SOAP WCF.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\bin\Debug\Apache.NMS.ActiveMQ.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\bin\Debug\Apache.NMS.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Let's Go Biking\Let's Go Biking - Server\SOAP WCF\bin\Debug\ICSharpCode.SharpZipLib.xml

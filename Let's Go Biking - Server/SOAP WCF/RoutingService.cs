@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Apache.NMS;
+using Apache.NMS.ActiveMQ;
+using Apache.NMS.ActiveMQ.Commands;
+using Newtonsoft.Json;
 using SOAP_WCF.ProxyServices;
 using System;
 using System.Collections.Generic;
@@ -12,17 +15,30 @@ namespace SOAP_WCF
     {
         private static readonly Dictionary<Contract, GeoCoordinate> contracts = new Dictionary<Contract, GeoCoordinate>();
 
-        private JCDecauxAPIClient JCD;
-        private OpenStreetMapAPIClient OSM;
+        private static JCDecauxAPIClient JCD;
+        private static OpenStreetMapAPIClient OSM;
 
-        public RoutingService()
+        private static IConnection connection;
+        private static ISession session;
+        private static IMessageProducer message;
+
+        static RoutingService()
         {
+            // Allowing messages of more than 65 536 bytes
             WSHttpBinding binding = new WSHttpBinding(SecurityMode.None);
             binding.MaxReceivedMessageSize = int.MaxValue;
             binding.MaxBufferPoolSize = int.MaxValue;
 
             JCD = new JCDecauxAPIClient(binding, new EndpointAddress("http://localhost:8088/ProxyService/JCDecaux"));
             OSM = new OpenStreetMapAPIClient(binding, new EndpointAddress("http://localhost:8088/ProxyService/OpenStreetMap"));
+
+            // Setting up ActiveMQ Producer
+            connection = new ConnectionFactory(new Uri("activemq:tcp://localhost:61616")).CreateConnection();
+            connection.Start();
+            session = connection.CreateSession();
+
+            message = session.CreateProducer(session.GetQueue("Let's Go Biking"));
+            message.DeliveryMode = MsgDeliveryMode.NonPersistent;
         }
 
         static string prettify(string jsonString)
@@ -113,17 +129,23 @@ namespace SOAP_WCF
         {
             if (coordinates.Length < 2) return null;
             List<Contract> contractsJCDecaux = JCD.Contracts().ToList();
-            contractsJCDecaux.RemoveAll(c => c.commercial_name == null || c.cities == null || c.country_code == null);
-
+            contractsJCDecaux.RemoveAll(c => c.commercial_name == null || c.cities == null || c.country_code == null);            
+            
             Tuple<Station, Station, Contract> closestStations = ClosestStation(coordinates[0], coordinates[coordinates.Length - 1], contractsJCDecaux);
             if (closestStations == null)
             {
+                Console.WriteLine("No station found");
+
                 // Ask for route from A to B by foot
                 Path route = OSM.Route(coordinates[0], coordinates[coordinates.Length - 1], "foot").paths.First();
-                return this.Generate(new Path[] { route });
+                Itinerary itinerary = this.Generate(new Path[] { route });
+                message.Send(session.CreateTextMessage(JsonConvert.SerializeObject(itinerary)));
+                return itinerary;
             }
             else
             {
+                Console.WriteLine("Station found: " + closestStations.Item1.name + " - " + closestStations.Item2.name);
+
                 // Ask for route from A to stationA by foot
                 Path route1 = OSM.Route(coordinates[0], Coordinate(closestStations.Item1), "foot").paths.First();
 
@@ -133,7 +155,9 @@ namespace SOAP_WCF
                 // Ask for route from stationB to B by foot
                 Path route3 = OSM.Route(Coordinate(closestStations.Item2), coordinates[coordinates.Length - 1], "foot").paths.First();
 
-                return this.Generate(new Path[] { route1, route2, route3 });
+                Itinerary itinerary = this.Generate(new Path[] { route1, route2, route3 });
+                message.Send(session.CreateTextMessage(JsonConvert.SerializeObject(itinerary)));
+                return itinerary;
             }
         }
 
