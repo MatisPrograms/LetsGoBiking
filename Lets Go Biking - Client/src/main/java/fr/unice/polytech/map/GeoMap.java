@@ -1,9 +1,7 @@
 package fr.unice.polytech.map;
 
 import fr.unice.polytech.Main;
-import fr.unice.polytech.services.GeoCoordinate;
 import fr.unice.polytech.services.Itinerary;
-import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.OSMTileFactoryInfo;
 import org.jxmapviewer.VirtualEarthTileFactoryInfo;
 import org.jxmapviewer.input.PanMouseInputListener;
@@ -14,10 +12,7 @@ import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.geom.Path2D;
-import java.awt.geom.Point2D;
 import java.util.Arrays;
-import java.util.List;
 
 public class GeoMap extends JFrame {
 
@@ -230,9 +225,7 @@ public class GeoMap extends JFrame {
     }
 
     public void showDirections(Itinerary itinerary) {
-        this.setTitle(this.getTitle() + " | Distance: " + String.format("%.2f", itinerary.getDistance() / 1000) + "Km");
         if (!this.isVisible()) this.setVisible(true);
-
         this.jXMapViewer.setItinerary(itinerary);
         this.update(this.getGraphics());
     }
