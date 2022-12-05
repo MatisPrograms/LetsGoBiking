@@ -13,6 +13,7 @@ import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Arrays;
+import java.util.List;
 
 public class GeoMap extends JFrame {
 
@@ -32,13 +33,7 @@ public class GeoMap extends JFrame {
         super("GeoMap - Choisir un point de départ et d'arrivée");
 
         try {
-            Arrays.stream(UIManager.getInstalledLookAndFeels()).filter(laf -> laf.getName().equals("Windows")).forEach(laf -> {
-                try {
-                    UIManager.setLookAndFeel(laf.getClassName());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
         }
 
@@ -224,9 +219,9 @@ public class GeoMap extends JFrame {
         this.update(this.getGraphics());
     }
 
-    public void showDirections(Itinerary itinerary) {
+    public void showDirections(List<Itinerary> itineraries) {
         if (!this.isVisible()) this.setVisible(true);
-        this.jXMapViewer.setItinerary(itinerary);
+        this.jXMapViewer.setItinerary(itineraries);
         this.update(this.getGraphics());
     }
 

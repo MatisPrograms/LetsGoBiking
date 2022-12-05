@@ -29,6 +29,7 @@ public class ObjectFactory {
 
     private final static QName _ArrayOfGeoCoordinate_QNAME = new QName("http://schemas.datacontract.org/2004/07/System.Device.Location", "ArrayOfGeoCoordinate");
     private final static QName _GeoCoordinate_QNAME = new QName("http://schemas.datacontract.org/2004/07/System.Device.Location", "GeoCoordinate");
+    private final static QName _ArrayOfItinerary_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "ArrayOfItinerary");
     private final static QName _Itinerary_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "Itinerary");
     private final static QName _ArrayOfStep_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "ArrayOfStep");
     private final static QName _Step_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "Step");
@@ -95,10 +96,10 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Itinerary }
+     * Create an instance of {@link ArrayOfItinerary }
      */
-    public Itinerary createItinerary() {
-        return new Itinerary();
+    public ArrayOfItinerary createArrayOfItinerary() {
+        return new ArrayOfItinerary();
     }
 
     /**
@@ -120,6 +121,13 @@ public class ObjectFactory {
      */
     public GetItineraryResponse createGetItineraryResponse() {
         return new GetItineraryResponse();
+    }
+
+    /**
+     * Create an instance of {@link Itinerary }
+     */
+    public Itinerary createItinerary() {
+        return new Itinerary();
     }
 
     /**
@@ -163,6 +171,17 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/System.Device.Location", name = "GeoCoordinate")
     public JAXBElement<GeoCoordinate> createGeoCoordinate(GeoCoordinate value) {
         return new JAXBElement<GeoCoordinate>(_GeoCoordinate_QNAME, GeoCoordinate.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "ArrayOfItinerary")
+    public JAXBElement<ArrayOfItinerary> createArrayOfItinerary(ArrayOfItinerary value) {
+        return new JAXBElement<ArrayOfItinerary>(_ArrayOfItinerary_QNAME, ArrayOfItinerary.class, null, value);
     }
 
     /**
@@ -452,14 +471,14 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      *
      * @param value Java instance representing xml element's value.
-     * @return the new instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "GetItineraryListResult", scope = GetItineraryListResponse.class)
-    public JAXBElement<Itinerary> createGetItineraryListResponseGetItineraryListResult(Itinerary value) {
-        return new JAXBElement<Itinerary>(_GetItineraryListResponseGetItineraryListResult_QNAME, Itinerary.class, GetItineraryListResponse.class, value);
+    public JAXBElement<ArrayOfItinerary> createGetItineraryListResponseGetItineraryListResult(ArrayOfItinerary value) {
+        return new JAXBElement<ArrayOfItinerary>(_GetItineraryListResponseGetItineraryListResult_QNAME, ArrayOfItinerary.class, GetItineraryListResponse.class, value);
     }
 
     /**

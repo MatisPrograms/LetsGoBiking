@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Device.Location;
 using System.Linq;
-using System.Security.Cryptography;
 using System.ServiceModel;
 
 namespace SOAP_WCF
@@ -110,40 +109,45 @@ namespace SOAP_WCF
             return itinerary;
         }
 
-        public Itinerary GetItineraryList(GeoCoordinate[] coordinates)
+        public Itinerary[] GetItineraryList(GeoCoordinate[] coordinates)
         {
             if (coordinates.Length < 2) return null;
             List<Contract> contractsJCDecaux = JCD.Contracts().ToList();
             contractsJCDecaux.RemoveAll(c => c.commercial_name == null || c.cities == null || c.country_code == null);
 
-            Tuple<Station, Station, Contract> closestStations = ClosestStation(coordinates[0], coordinates[coordinates.Length - 1], contractsJCDecaux);
-            if (closestStations == null)
+            List<Itinerary> itineraries = new List<Itinerary>();
+            for (int i = 0; i < coordinates.Length - 1; i++)
             {
-                // Ask for route from A to B by foot
-                Path route = OSM.Route(coordinates[0], coordinates[coordinates.Length - 1], "foot").paths.First();
-                return this.Generate(new Path[] { route });
+                Tuple<Station, Station, Contract> closestStations = ClosestStation(coordinates[i], coordinates[i + 1], contractsJCDecaux);
+                if (closestStations == null)
+                {
+                    // Ask for route from A to B by foot
+                    Path route = OSM.Route(coordinates[i], coordinates[i + 1], "foot").paths.First();
+                    itineraries.Add(this.Generate(new Path[] { route }));
+                }
+                else
+                {
+                    // Ask for route from A to stationA by foot
+                    Path route1 = OSM.Route(coordinates[i], Coordinate(closestStations.Item1), "foot").paths.First();
+
+                    // Ask for route from stationA to stationB by bike
+                    Path route2 = OSM.Route(Coordinate(closestStations.Item1), Coordinate(closestStations.Item2), "bike").paths.First();
+
+                    // Ask for route from stationB to B by foot
+                    Path route3 = OSM.Route(Coordinate(closestStations.Item2), coordinates[i + 1], "foot").paths.First();
+
+                    Itinerary itinerary = this.Generate(new Path[] { route1, route2, route3 });
+                    itinerary.fromStation = new GeoCoordinate(closestStations.Item1.position.lat, closestStations.Item1.position.lng);
+                    itinerary.toStation = new GeoCoordinate(closestStations.Item2.position.lat, closestStations.Item2.position.lng);
+                    itineraries.Add(itinerary);
+                }
             }
-            else
-            {
-                // Ask for route from A to stationA by foot
-                Path route1 = OSM.Route(coordinates[0], Coordinate(closestStations.Item1), "foot").paths.First();
-
-                // Ask for route from stationA to stationB by bike
-                Path route2 = OSM.Route(Coordinate(closestStations.Item1), Coordinate(closestStations.Item2), "bike").paths.First();
-
-                // Ask for route from stationB to B by foot
-                Path route3 = OSM.Route(Coordinate(closestStations.Item2), coordinates[coordinates.Length - 1], "foot").paths.First();
-
-                Itinerary itinerary = this.Generate(new Path[] { route1, route2, route3 });
-                itinerary.fromStation = new GeoCoordinate(closestStations.Item1.position.lat, closestStations.Item1.position.lng);
-                itinerary.toStation = new GeoCoordinate(closestStations.Item2.position.lat, closestStations.Item2.position.lng);
-                return itinerary;
-            }
+            return itineraries.ToArray();
         }
 
         public Itinerary GetItinerary(GeoCoordinate origin, GeoCoordinate destination)
         {
-            return GetItineraryList(new GeoCoordinate[] { origin, destination });
+            return GetItineraryList(new GeoCoordinate[] { origin, destination }).First();
         }
     }
 }

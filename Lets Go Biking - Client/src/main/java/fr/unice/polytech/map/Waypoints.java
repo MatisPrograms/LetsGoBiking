@@ -39,6 +39,27 @@ public class Waypoints extends WaypointPainter<Waypoint> {
             Waypoint wp = entry.getKey();
             JButton button = entry.getValue();
 
+            // open a context menu when the button is clicked
+            button.addActionListener(e -> {
+                JPopupMenu menu = new JPopupMenu();
+
+                JMenuItem coordinate = new JMenuItem();
+                coordinate.setText(String.format("Coordinates: %.2f, %.2f", wp.getPosition().getLatitude(), wp.getPosition().getLongitude()));
+
+                JMenuItem remove = new JMenuItem("Remove Waypoint");
+                remove.addActionListener(a -> {
+                    this.waypoints.remove(wp);
+                    map.remove(button);
+
+                    if (map instanceof MapViewer) ((MapViewer) map).setItinerary(null);
+                    map.repaint();
+                });
+
+                menu.add(coordinate);
+                menu.add(remove);
+                menu.show(button, button.getWidth() / 2, button.getHeight() / 2);
+            });
+
             Point2D p = map.getTileFactory().geoToPixel(wp.getPosition(), map.getZoom());
             Rectangle rec = map.getViewportBounds();
 

@@ -15,10 +15,10 @@ public class MapViewer extends JXMapViewer {
     public static final double DISTANCE = 0.0001;
     public static final Color FOOT = new Color(0, 176, 255);
     private static final Color BIKE = new Color(0, 123, 178);
-    private Itinerary itinerary;
+    private List<Itinerary> itineraries;
 
-    public void setItinerary(Itinerary itinerary) {
-        this.itinerary = itinerary;
+    public void setItinerary(List<Itinerary> itineraries) {
+        this.itineraries = itineraries;
         this.repaint();
     }
 
@@ -43,56 +43,61 @@ public class MapViewer extends JXMapViewer {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (this.itinerary != null) {
-            // Set up graphics
-            Graphics2D g2d = (Graphics2D) g.create();
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2d.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        if (this.itineraries == null) return;
+        for (Itinerary itinerary : this.itineraries) {
+            if (itinerary != null) {
+                // Set up graphics
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2d.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
 
-            // Separate list of coordinates into sublist before fromStation, between fromStation and toStation, and after toStation
-            List<GeoCoordinate> coordinates = this.itinerary.getCoordinates().getValue().getGeoCoordinate();
-            GeoCoordinate from = this.itinerary.getFromStation().getValue();
-            GeoCoordinate to = this.itinerary.getToStation().getValue();
+                // Separate list of coordinates into sublist before fromStation, between fromStation and toStation, and after toStation
+                List<GeoCoordinate> coordinates = itinerary.getCoordinates().getValue().getGeoCoordinate();
+                GeoCoordinate from = itinerary.getFromStation().getValue();
+                GeoCoordinate to = itinerary.getToStation().getValue();
 
-            if (from != null && to != null) {
-                int indexA = 0;
-                for (GeoCoordinate coordinate : coordinates) {
-                    if (isCloseTo(coordinate, from)) break;
-                    indexA++;
+                if (from != null && to != null) {
+                    int indexA = 0;
+                    for (GeoCoordinate coordinate : coordinates) {
+                        if (isCloseTo(coordinate, from)) break;
+                        indexA++;
+                    }
+
+                    int indexB = indexA + 1;
+                    for (GeoCoordinate coordinate : coordinates.subList(Math.min(indexA + 1, coordinates.size() - 1), coordinates.size() - 1)) {
+                        if (isCloseTo(coordinate, to)) break;
+                        indexB++;
+                    }
+
+                    List<GeoCoordinate> before = coordinates.subList(0, Math.min(indexA, coordinates.size() - 1));
+                    List<GeoCoordinate> between = coordinates.subList(Math.min(indexA + 1, coordinates.size() - 1), Math.min(indexB, coordinates.size() - 1));
+                    List<GeoCoordinate> after = coordinates.subList(Math.min(indexB + 1, coordinates.size() - 1), coordinates.size() - 1);
+
+                    Path2D pathA = new Path2D.Double();
+                    this.drawRoute(pathA, before);
+                    g2d.setColor(FOOT);
+                    g2d.draw(pathA);
+
+                    if (indexA < coordinates.size()) {
+                        Path2D pathB = new Path2D.Double();
+                        this.drawRoute(pathB, between);
+                        g2d.setColor(BIKE);
+                        g2d.draw(pathB);
+
+                        Path2D pathC = new Path2D.Double();
+                        this.drawRoute(pathC, after);
+                        g2d.setColor(FOOT);
+                        g2d.draw(pathC);
+                    }
+                } else {
+                    Path2D path = new Path2D.Double();
+                    this.drawRoute(path, coordinates);
+                    g2d.setColor(FOOT);
+                    g2d.draw(path);
                 }
-
-                int indexB = indexA;
-                for (GeoCoordinate coordinate : coordinates.subList(indexA + 1, coordinates.size())) {
-                    if (isCloseTo(coordinate, to)) break;
-                    indexB++;
-                }
-
-                List<GeoCoordinate> before = coordinates.subList(0, indexA);
-                List<GeoCoordinate> between = coordinates.subList(indexA + 1, indexB);
-                List<GeoCoordinate> after = coordinates.subList(indexB + 1, coordinates.size());
-
-                Path2D pathA = new Path2D.Double();
-                this.drawRoute(pathA, before);
-                g2d.setColor(FOOT);
-                g2d.draw(pathA);
-
-                Path2D pathB = new Path2D.Double();
-                this.drawRoute(pathB, between);
-                g2d.setColor(BIKE);
-                g2d.draw(pathB);
-
-                Path2D pathC = new Path2D.Double();
-                this.drawRoute(pathC, after);
-                g2d.setColor(FOOT);
-                g2d.draw(pathC);
-            } else {
-                Path2D path = new Path2D.Double();
-                this.drawRoute(path, coordinates);
-                g2d.setColor(FOOT);
-                g2d.draw(path);
+                g2d.dispose();
             }
-            g2d.dispose();
         }
     }
 }

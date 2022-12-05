@@ -10,16 +10,16 @@ import java.util.List;
 
 
 /**
- * <p>Java class for ArrayOfStep complex type.
+ * <p>Java class for ArrayOfItinerary complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  * <pre>
- * &lt;complexType name="ArrayOfStep"&gt;
+ * &lt;complexType name="ArrayOfItinerary"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Step" type="{http://schemas.datacontract.org/2004/07/SOAP_WCF}Step" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Itinerary" type="{http://schemas.datacontract.org/2004/07/SOAP_WCF}Itinerary" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,39 +27,39 @@ import java.util.List;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArrayOfStep", propOrder = {
-        "step"
+@XmlType(name = "ArrayOfItinerary", propOrder = {
+        "itinerary"
 })
-public class ArrayOfStep {
+public class ArrayOfItinerary {
 
-    @XmlElement(name = "Step", nillable = true)
-    protected List<Step> step;
+    @XmlElement(name = "Itinerary", nillable = true)
+    protected List<Itinerary> itinerary;
 
     /**
-     * Gets the value of the step property.
+     * Gets the value of the itinerary property.
      *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the step property.
+     * This is why there is not a <CODE>set</CODE> method for the itinerary property.
      *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStep().add(newItem);
+     *    getItinerary().add(newItem);
      * </pre>
      *
      *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Step }
+     * {@link Itinerary }
      */
-    public List<Step> getStep() {
-        if (step == null) {
-            step = new ArrayList<Step>();
+    public List<Itinerary> getItinerary() {
+        if (itinerary == null) {
+            itinerary = new ArrayList<Itinerary>();
         }
-        return this.step;
+        return this.itinerary;
     }
 
 }

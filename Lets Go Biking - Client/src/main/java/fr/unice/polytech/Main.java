@@ -20,7 +20,6 @@ public class Main {
     }
 
     public static void calculateItinerary(GeoMap map) {
-
         // Getting list of wanted waypoints
         List<Waypoint> waypoints = map.getWaypoints().waypoints().keySet().stream().toList();
 
@@ -47,13 +46,19 @@ public class Main {
         directions.getGeoCoordinate().addAll(waypoints.stream().map(Waypoint::getPosition).map(Main::convert).toList());
 
         try {
-            Itinerary itinerary = new RoutingService().getWSHttpBindingIRoutingService().getItineraryList(directions);
-            System.out.println("Directions received from server:");
-            System.out.println("Total distance: " + String.format("%.2f", itinerary.getDistance() / 1000) + "km ↑" + String.format("%.2f", itinerary.getAscend()) + "m ↓" + String.format("%.2f", itinerary.getDescend()) + "m");
-            System.out.println("Total time: " + String.format("%.2f", itinerary.getDuration() / 1000 / 60) + "min");
+            List<Itinerary> itineraries = new RoutingService().getWSHttpBindingIRoutingService().getItineraryList(directions).getItinerary();
+            if (itineraries == null) {
+                System.err.println("No itineraries found");
+                return;
+            }
+            for (Itinerary itinerary : itineraries) {
+                System.out.println("Directions received from server:");
+                System.out.println("Total distance: " + distance(itinerary.getDistance()) + " ↑" + distance(itinerary.getAscend()) + " ↓" + distance(itinerary.getDescend()));
+                System.out.println("Total time: " + time(itinerary.getDuration()));
+            }
 
             // Displaying directions
-            map.showDirections(itinerary);
+            map.showDirections(itineraries);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             map.dispose();
@@ -70,10 +75,29 @@ public class Main {
         return new GeoPosition(lat, lon);
     }
 
-    static GeoCoordinate convert(GeoPosition position) {
+    private static GeoCoordinate convert(GeoPosition position) {
         GeoCoordinate geoCoordinate = new GeoCoordinate();
         geoCoordinate.setLatitude(position.getLatitude());
         geoCoordinate.setLongitude(position.getLongitude());
         return geoCoordinate;
+    }
+
+    private static String distance(double distance) {
+        if (distance < 1000) {
+            return String.format("%.2f", distance) + "m";
+        } else {
+            return String.format("%.2f", distance / 1000) + "km";
+        }
+    }
+
+    private static String time(double time) {
+        time /= 1000;
+        if (time < 60) {
+            return String.format("%.2f", time) + "s";
+        } else if (time < 3600) {
+            return String.format("%.2f", time / 60) + "min";
+        } else {
+            return String.format("%.2f", time / 3600) + "h";
+        }
     }
 }

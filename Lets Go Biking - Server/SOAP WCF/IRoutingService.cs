@@ -8,7 +8,7 @@ namespace SOAP_WCF
     public interface IRoutingService
     {
         [OperationContract]
-        Itinerary GetItineraryList(GeoCoordinate[] coordinates);
+        Itinerary[] GetItineraryList(GeoCoordinate[] coordinates);
 
         [OperationContract]
         Itinerary GetItinerary(GeoCoordinate origin, GeoCoordinate destination);

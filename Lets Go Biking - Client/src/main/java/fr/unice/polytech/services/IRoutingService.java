@@ -23,13 +23,13 @@ public interface IRoutingService {
 
     /**
      * @param coordinates
-     * @return returns fr.unice.polytech.services.Itinerary
+     * @return returns fr.unice.polytech.services.ArrayOfItinerary
      */
     @WebMethod(operationName = "GetItineraryList", action = "http://tempuri.org/IRoutingService/GetItineraryList")
     @WebResult(name = "GetItineraryListResult", targetNamespace = "http://tempuri.org/")
     @RequestWrapper(localName = "GetItineraryList", targetNamespace = "http://tempuri.org/", className = "fr.unice.polytech.services.GetItineraryList")
     @ResponseWrapper(localName = "GetItineraryListResponse", targetNamespace = "http://tempuri.org/", className = "fr.unice.polytech.services.GetItineraryListResponse")
-    Itinerary getItineraryList(
+    ArrayOfItinerary getItineraryList(
             @WebParam(name = "coordinates", targetNamespace = "http://tempuri.org/")
             ArrayOfGeoCoordinate coordinates);
 

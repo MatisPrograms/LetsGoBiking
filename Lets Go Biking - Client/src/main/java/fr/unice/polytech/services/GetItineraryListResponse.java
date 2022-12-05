@@ -14,7 +14,7 @@ import jakarta.xml.bind.annotation.*;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="GetItineraryListResult" type="{http://schemas.datacontract.org/2004/07/SOAP_WCF}Itinerary" minOccurs="0"/&gt;
+ *         &lt;element name="GetItineraryListResult" type="{http://schemas.datacontract.org/2004/07/SOAP_WCF}ArrayOfItinerary" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -25,19 +25,19 @@ import jakarta.xml.bind.annotation.*;
 @XmlType(name = "", propOrder = {
         "getItineraryListResult"
 })
-@XmlRootElement(name = "GetItineraryListResponse")
+@XmlRootElement(name = "GetItineraryListResponse", namespace = "http://tempuri.org/")
 public class GetItineraryListResponse {
 
     @XmlElementRef(name = "GetItineraryListResult", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<Itinerary> getItineraryListResult;
+    protected JAXBElement<ArrayOfItinerary> getItineraryListResult;
 
     /**
      * Gets the value of the getItineraryListResult property.
      *
      * @return possible object is
-     * {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
+     * {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
-    public JAXBElement<Itinerary> getGetItineraryListResult() {
+    public JAXBElement<ArrayOfItinerary> getGetItineraryListResult() {
         return getItineraryListResult;
     }
 
@@ -45,9 +45,9 @@ public class GetItineraryListResponse {
      * Sets the value of the getItineraryListResult property.
      *
      * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
+     *              {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
-    public void setGetItineraryListResult(JAXBElement<Itinerary> value) {
+    public void setGetItineraryListResult(JAXBElement<ArrayOfItinerary> value) {
         this.getItineraryListResult = value;
     }
 

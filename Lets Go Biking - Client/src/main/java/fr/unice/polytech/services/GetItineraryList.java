@@ -25,7 +25,7 @@ import jakarta.xml.bind.annotation.*;
 @XmlType(name = "", propOrder = {
         "coordinates"
 })
-@XmlRootElement(name = "GetItineraryList")
+@XmlRootElement(name = "GetItineraryList", namespace = "http://tempuri.org/")
 public class GetItineraryList {
 
     @XmlElementRef(name = "coordinates", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)

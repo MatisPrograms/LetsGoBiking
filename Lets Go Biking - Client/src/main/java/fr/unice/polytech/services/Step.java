@@ -28,7 +28,7 @@ import jakarta.xml.bind.annotation.XmlType;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Step", namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", propOrder = {
+@XmlType(name = "Step", propOrder = {
         "distance",
         "duration",
         "streetName",
