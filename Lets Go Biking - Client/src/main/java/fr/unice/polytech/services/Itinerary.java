@@ -23,7 +23,9 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="descend" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="distance" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
+ *         &lt;element name="fromStation" type="{http://schemas.datacontract.org/2004/07/System.Device.Location}GeoCoordinate" minOccurs="0"/&gt;
  *         &lt;element name="steps" type="{http://schemas.datacontract.org/2004/07/SOAP_WCF}ArrayOfStep" minOccurs="0"/&gt;
+ *         &lt;element name="toStation" type="{http://schemas.datacontract.org/2004/07/System.Device.Location}GeoCoordinate" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,7 +40,9 @@ import jakarta.xml.bind.annotation.XmlType;
         "descend",
         "distance",
         "duration",
-        "steps"
+        "fromStation",
+        "steps",
+        "toStation"
 })
 public class Itinerary {
 
@@ -50,8 +54,12 @@ public class Itinerary {
     protected Double descend;
     protected Double distance;
     protected Double duration;
+    @XmlElementRef(name = "fromStation", namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", type = JAXBElement.class, required = false)
+    protected JAXBElement<GeoCoordinate> fromStation;
     @XmlElementRef(name = "steps", namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfStep> steps;
+    @XmlElementRef(name = "toStation", namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", type = JAXBElement.class, required = false)
+    protected JAXBElement<GeoCoordinate> toStation;
 
     /**
      * Gets the value of the ascend property.
@@ -174,6 +182,26 @@ public class Itinerary {
     }
 
     /**
+     * Gets the value of the fromStation property.
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     */
+    public JAXBElement<GeoCoordinate> getFromStation() {
+        return fromStation;
+    }
+
+    /**
+     * Sets the value of the fromStation property.
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     */
+    public void setFromStation(JAXBElement<GeoCoordinate> value) {
+        this.fromStation = value;
+    }
+
+    /**
      * Gets the value of the steps property.
      *
      * @return possible object is
@@ -191,6 +219,26 @@ public class Itinerary {
      */
     public void setSteps(JAXBElement<ArrayOfStep> value) {
         this.steps = value;
+    }
+
+    /**
+     * Gets the value of the toStation property.
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     */
+    public JAXBElement<GeoCoordinate> getToStation() {
+        return toStation;
+    }
+
+    /**
+     * Sets the value of the toStation property.
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     */
+    public void setToStation(JAXBElement<GeoCoordinate> value) {
+        this.toStation = value;
     }
 
 }

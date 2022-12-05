@@ -31,11 +31,12 @@
         <version>2.3.2</version>
         <configuration>
           <wsdlUrls>
-            <wsdlUrl>http://localhost:8888/ws/country?wsdl</wsdlUrl>
+            <wsdlUrl>http://localhost:8088/RoutingService?wsdl</wsdlUrl>
           </wsdlUrls>
           <keep>true</keep>
-          <packageName>com.baeldung.soap.ws.client.generated</packageName>
+          <packageName>fr.unice.polytech.itinerary</packageName>
           <sourceDestDir>src/main/java</sourceDestDir>
+          <args>-extension</args>
         </configuration>
       </plugin>
     </plugins>
