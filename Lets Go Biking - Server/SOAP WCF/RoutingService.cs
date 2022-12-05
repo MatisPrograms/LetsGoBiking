@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
-using SOAP_WCF.ProxyServices;
+﻿using SOAP_WCF.ProxyServices;
 using System;
 using System.Collections.Generic;
 using System.Device.Location;
 using System.Linq;
 using System.ServiceModel;
+using Apache.NMS;
+using Apache.NMS.ActiveMQ;
+using Newtonsoft.Json;
 
 namespace SOAP_WCF
 {
     public class RoutingService : IRoutingService
     {
-        private static readonly Dictionary<Contract, GeoCoordinate> contracts = new Dictionary<Contract, GeoCoordinate>();
-
         private JCDecauxAPIClient JCD;
         private OpenStreetMapAPIClient OSM;
 
@@ -25,21 +25,7 @@ namespace SOAP_WCF
             OSM = new OpenStreetMapAPIClient(binding, new EndpointAddress("http://localhost:8088/ProxyService/OpenStreetMap"));
         }
 
-        static string prettify(string jsonString)
-        {
-            return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(jsonString), Formatting.Indented);
-        }
-
-        private GeoCoordinate Coordinate(Contract contract)
-        {
-            if (!contracts.ContainsKey(contract)) contracts.Add(contract, OSM.GeoCoordinate(contract.name));
-            return contracts[contract];
-        }
-
-        private GeoCoordinate Coordinate(Station station)
-        {
-            return new GeoCoordinate(station.position.lat, station.position.lng);
-        }
+        private GeoCoordinate Coordinate(Station station) => new GeoCoordinate(station.position.lat, station.position.lng);
 
         private Tuple<Station, Station, Contract> ClosestStation(GeoCoordinate a, GeoCoordinate b, List<Contract> contracts)
         {
@@ -77,6 +63,7 @@ namespace SOAP_WCF
 
         private Itinerary Generate(Path[] routes)
         {
+            // Combining routes to generate itinerary
             Itinerary itinerary = new Itinerary();
             foreach (Path r in routes)
             {
@@ -111,43 +98,77 @@ namespace SOAP_WCF
 
         public Itinerary[] GetItineraryList(GeoCoordinate[] coordinates)
         {
-            if (coordinates.Length < 2) return null;
-            List<Contract> contractsJCDecaux = JCD.Contracts().ToList();
-            contractsJCDecaux.RemoveAll(c => c.commercial_name == null || c.cities == null || c.country_code == null);
-
-            List<Itinerary> itineraries = new List<Itinerary>();
-            for (int i = 0; i < coordinates.Length - 1; i++)
+            try
             {
-                Tuple<Station, Station, Contract> closestStations = ClosestStation(coordinates[i], coordinates[i + 1], contractsJCDecaux);
-                if (closestStations == null)
+                if (coordinates.Length < 2) return null;
+                List<Contract> contractsJCDecaux = JCD.Contracts().ToList();
+                contractsJCDecaux.RemoveAll(c => c.commercial_name == null || c.cities == null || c.country_code == null);
+
+                List<Itinerary> itineraries = new List<Itinerary>();
+                for (int i = 0; i < coordinates.Length - 1; i++)
                 {
-                    // Ask for route from A to B by foot
-                    Path route = OSM.Route(coordinates[i], coordinates[i + 1], "foot").paths.First();
-                    itineraries.Add(this.Generate(new Path[] { route }));
+                    Tuple<Station, Station, Contract> closestStations = ClosestStation(coordinates[i], coordinates[i + 1], contractsJCDecaux);
+                    if (closestStations == null)
+                    {
+                        // Ask for route from A to B by foot
+                        Path route = OSM.Route(coordinates[i], coordinates[i + 1], "foot").paths.First();
+                        itineraries.Add(this.Generate(new Path[] { route }));
+                    }
+                    else
+                    {
+                        // Ask for route from A to stationA by foot
+                        Path route1 = OSM.Route(coordinates[i], Coordinate(closestStations.Item1), "foot").paths.First();
+
+                        // Ask for route from stationA to stationB by bike
+                        Path route2 = OSM.Route(Coordinate(closestStations.Item1), Coordinate(closestStations.Item2), "bike").paths.First();
+
+                        // Ask for route from stationB to B by foot
+                        Path route3 = OSM.Route(Coordinate(closestStations.Item2), coordinates[i + 1], "foot").paths.First();
+
+                        Itinerary itinerary = this.Generate(new Path[] { route1, route2, route3 });
+                        itinerary.fromStation = new GeoCoordinate(closestStations.Item1.position.lat, closestStations.Item1.position.lng);
+                        itinerary.toStation = new GeoCoordinate(closestStations.Item2.position.lat, closestStations.Item2.position.lng);
+                        itineraries.Add(itinerary);
+                    }
                 }
-                else
-                {
-                    // Ask for route from A to stationA by foot
-                    Path route1 = OSM.Route(coordinates[i], Coordinate(closestStations.Item1), "foot").paths.First();
-
-                    // Ask for route from stationA to stationB by bike
-                    Path route2 = OSM.Route(Coordinate(closestStations.Item1), Coordinate(closestStations.Item2), "bike").paths.First();
-
-                    // Ask for route from stationB to B by foot
-                    Path route3 = OSM.Route(Coordinate(closestStations.Item2), coordinates[i + 1], "foot").paths.First();
-
-                    Itinerary itinerary = this.Generate(new Path[] { route1, route2, route3 });
-                    itinerary.fromStation = new GeoCoordinate(closestStations.Item1.position.lat, closestStations.Item1.position.lng);
-                    itinerary.toStation = new GeoCoordinate(closestStations.Item2.position.lat, closestStations.Item2.position.lng);
-                    itineraries.Add(itinerary);
-                }
+                return itineraries.ToArray();
             }
-            return itineraries.ToArray();
+            catch
+            {
+                return null;
+            }
         }
 
         public Itinerary GetItinerary(GeoCoordinate origin, GeoCoordinate destination)
         {
-            return GetItineraryList(new GeoCoordinate[] { origin, destination }).First();
+            try
+            {
+                return GetItineraryList(new GeoCoordinate[] { origin, destination }).First();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public void LiveItinerary(GeoCoordinate current, GeoCoordinate goal)
+        {
+            try
+            {
+                IConnection connection = new ConnectionFactory(new Uri("activemq:tcp://localhost:61616")).CreateConnection();
+                connection.Start();
+                ISession session = connection.CreateSession();
+
+                IMessageProducer message = session.CreateProducer(session.GetQueue("Let's Go Biking"));
+                message.DeliveryMode = MsgDeliveryMode.NonPersistent;
+                message.Send(session.CreateTextMessage(JsonConvert.SerializeObject(GetItinerary(current, goal))));
+
+                session.Close();
+                connection.Close();
+            }
+            catch
+            {
+            }
         }
     }
 }

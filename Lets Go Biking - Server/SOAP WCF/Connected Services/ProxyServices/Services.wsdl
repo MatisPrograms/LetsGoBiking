@@ -35,12 +35,6 @@
   <wsdl:message name="IJCDecauxAPI_Stations_OutputMessage">
     <wsdl:part name="parameters" element="tns:StationsResponse" />
   </wsdl:message>
-  <wsdl:message name="IJCDecauxAPI_Station_InputMessage">
-    <wsdl:part name="parameters" element="tns:Station" />
-  </wsdl:message>
-  <wsdl:message name="IJCDecauxAPI_Station_OutputMessage">
-    <wsdl:part name="parameters" element="tns:StationResponse" />
-  </wsdl:message>
   <wsdl:message name="IOpenStreetMapAPI_Querry_InputMessage">
     <wsdl:part name="parameters" element="tns:Querry" />
   </wsdl:message>
@@ -67,10 +61,6 @@
     <wsdl:operation name="Stations">
       <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxAPI/Stations" message="tns:IJCDecauxAPI_Stations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxAPI/StationsResponse" message="tns:IJCDecauxAPI_Stations_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Station">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxAPI/Station" message="tns:IJCDecauxAPI_Station_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxAPI/StationResponse" message="tns:IJCDecauxAPI_Station_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IOpenStreetMapAPI">
@@ -101,15 +91,6 @@
     </wsdl:operation>
     <wsdl:operation name="Stations">
       <soap12:operation soapAction="http://tempuri.org/IJCDecauxAPI/Stations" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Station">
-      <soap12:operation soapAction="http://tempuri.org/IJCDecauxAPI/Station" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -12,6 +12,9 @@ namespace SOAP_WCF
 
         [OperationContract]
         Itinerary GetItinerary(GeoCoordinate origin, GeoCoordinate destination);
+
+        [OperationContract]
+        void LiveItinerary(GeoCoordinate current, GeoCoordinate goal);
     }
 
     [DataContract]

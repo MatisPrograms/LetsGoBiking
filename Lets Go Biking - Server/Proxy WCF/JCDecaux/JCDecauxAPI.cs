@@ -40,14 +40,9 @@ namespace Proxy_WCF
 
         public List<Contract> Contracts()
         {
-            return JsonConvert.DeserializeObject<List<Contract>>(getFromUrlAsync("/contracts?").Result);
-        }
-
-        public List<Station> Stations(string contractName)
-        {
             try
             {
-                return JsonConvert.DeserializeObject<List<Station>>(getFromUrlAsync("/stations?contract=" + contractName).Result);
+                return JsonConvert.DeserializeObject<List<Contract>>(getFromUrlAsync("/contracts?").Result);
             }
             catch
             {
@@ -55,11 +50,11 @@ namespace Proxy_WCF
             }
         }
 
-        public Station Station(string contractName, string stationName)
+        public List<Station> Stations(string contractName)
         {
             try
             {
-                return JsonConvert.DeserializeObject<Station>(getFromUrlAsync("/stations/" + stationName + "?contract=" + contractName).Result);
+                return JsonConvert.DeserializeObject<List<Station>>(getFromUrlAsync("/stations?contract=" + contractName).Result);
             }
             catch
             {

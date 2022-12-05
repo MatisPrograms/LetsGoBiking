@@ -28,21 +28,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Station">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="contractName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="stationName" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="StationResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Proxy_WCF" minOccurs="0" name="StationResult" nillable="true" type="q3:Station" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Querry">
     <xs:complexType>
       <xs:sequence>
@@ -53,7 +38,7 @@
   <xs:element name="QuerryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Proxy_WCF" minOccurs="0" name="QuerryResult" nillable="true" type="q4:ArrayOfPlace" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Proxy_WCF" minOccurs="0" name="QuerryResult" nillable="true" type="q3:ArrayOfPlace" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -67,15 +52,15 @@
   <xs:element name="GeoCoordinateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Device.Location" minOccurs="0" name="GeoCoordinateResult" nillable="true" type="q5:GeoCoordinate" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Device.Location" minOccurs="0" name="GeoCoordinateResult" nillable="true" type="q4:GeoCoordinate" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Route">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Device.Location" minOccurs="0" name="start" nillable="true" type="q6:GeoCoordinate" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Device.Location" minOccurs="0" name="end" nillable="true" type="q7:GeoCoordinate" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Device.Location" minOccurs="0" name="start" nillable="true" type="q5:GeoCoordinate" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Device.Location" minOccurs="0" name="end" nillable="true" type="q6:GeoCoordinate" />
         <xs:element minOccurs="0" name="transport" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -83,7 +68,7 @@
   <xs:element name="RouteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Proxy_WCF" minOccurs="0" name="RouteResult" nillable="true" type="q8:Route" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Proxy_WCF" minOccurs="0" name="RouteResult" nillable="true" type="q7:Route" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

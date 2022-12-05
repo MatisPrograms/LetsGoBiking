@@ -1278,12 +1278,6 @@ namespace SOAP_WCF.ProxyServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxAPI/Stations", ReplyAction="http://tempuri.org/IJCDecauxAPI/StationsResponse")]
         System.Threading.Tasks.Task<SOAP_WCF.ProxyServices.Station[]> StationsAsync(string contractName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxAPI/Station", ReplyAction="http://tempuri.org/IJCDecauxAPI/StationResponse")]
-        SOAP_WCF.ProxyServices.Station Station(string contractName, string stationName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxAPI/Station", ReplyAction="http://tempuri.org/IJCDecauxAPI/StationResponse")]
-        System.Threading.Tasks.Task<SOAP_WCF.ProxyServices.Station> StationAsync(string contractName, string stationName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1327,14 +1321,6 @@ namespace SOAP_WCF.ProxyServices {
         
         public System.Threading.Tasks.Task<SOAP_WCF.ProxyServices.Station[]> StationsAsync(string contractName) {
             return base.Channel.StationsAsync(contractName);
-        }
-        
-        public SOAP_WCF.ProxyServices.Station Station(string contractName, string stationName) {
-            return base.Channel.Station(contractName, stationName);
-        }
-        
-        public System.Threading.Tasks.Task<SOAP_WCF.ProxyServices.Station> StationAsync(string contractName, string stationName) {
-            return base.Channel.StationAsync(contractName, stationName);
         }
     }
     

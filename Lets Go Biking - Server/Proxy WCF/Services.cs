@@ -19,11 +19,6 @@ namespace Proxy_WCF
             return JCDecaux.Stations(contractName);
         }
 
-        public Station Station(string contractName, string stationName)
-        {
-            return JCDecaux.Station(contractName, stationName);
-        }
-
         public List<Place> Querry(string querry)
         {
             return OpenStreetMap.Querry(querry);

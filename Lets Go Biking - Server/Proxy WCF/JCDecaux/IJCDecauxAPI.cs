@@ -12,9 +12,6 @@ namespace Proxy_WCF
 
         [OperationContract]
         List<Station> Stations(string contractName);
-
-        [OperationContract]
-        Station Station(string contractName, string stationName);
     }
 
     [DataContract]

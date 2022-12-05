@@ -63,14 +63,9 @@ C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\SOAP Server.exe.config
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\SOAP Server.exe
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\SOAP Server.pdb
-C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\Apache.NMS.ActiveMQ.dll
-C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\Apache.NMS.dll
-C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\ICSharpCode.SharpZipLib.dll
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\SOAP WCF.dll
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\Newtonsoft.Json.dll
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\SOAP WCF.pdb
-C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\ICSharpCode.SharpZipLib.pdb
-C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\ICSharpCode.SharpZipLib.xml
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\Newtonsoft.Json.xml
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\obj\Debug\SOAP Server.csproj.AssemblyReference.cache
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\obj\Debug\SOAP Server.csproj.SuggestedBindingRedirects.cache
@@ -78,3 +73,8 @@ C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\obj\Debug\SOAP Server.csproj.CopyComplete
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\obj\Debug\SOAP Server.exe
 C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\obj\Debug\SOAP Server.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\Apache.NMS.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\Apache.NMS.ActiveMQ.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\matis\OneDrive - Université Nice Sophia Antipolis\Cours\S7\Middleware\Lets Go Biking\Lets Go Biking - Server\SOAP Server\bin\Debug\ICSharpCode.SharpZipLib.xml

@@ -51,20 +51,41 @@ namespace Proxy_WCF
 
         public List<Place> Querry(string querry)
         {
-            return JsonConvert.DeserializeObject<List<Place>>(getFromUrlAsync(apiUrlOSM + querry + jsonFormatOSM).Result);
+            try
+            {
+                return JsonConvert.DeserializeObject<List<Place>>(getFromUrlAsync(apiUrlOSM + querry + jsonFormatOSM).Result);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
 
         public GeoCoordinate GeoCoordinate(string place)
         {
-            Place returnedPlace = Querry(place).First();
-            return returnedPlace == null ? null : returnedPlace.Coordinate();
+            try
+            {
+                Place returnedPlace = Querry(place).First();
+                return returnedPlace == null ? null : returnedPlace.Coordinate();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public Route Route(GeoCoordinate start, GeoCoordinate end, string transport)
         {
-            string positions = "&point=" + start.Latitude + "%2C" + start.Longitude + "&point=" + end.Latitude + "%2C" + end.Longitude;
-            return JsonConvert.DeserializeObject<Route>(getFromUrlAsync(apiUrlGH + transport + paramsGH + positions).Result);
+            try
+            {
+                string positions = "&point=" + start.Latitude + "%2C" + start.Longitude + "&point=" + end.Latitude + "%2C" + end.Longitude;
+                return JsonConvert.DeserializeObject<Route>(getFromUrlAsync(apiUrlGH + transport + paramsGH + positions).Result);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
