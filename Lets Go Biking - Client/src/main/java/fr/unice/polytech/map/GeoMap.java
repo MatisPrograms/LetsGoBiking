@@ -24,7 +24,7 @@ public class GeoMap extends JFrame {
     private static final GeoPosition ANTIBES = new GeoPosition(43.5804, 7.1164);
     private static final int DEFAULT_ZOOM = 12;
 
-    private final JXMapViewer jXMapViewer = new JXMapViewer();
+    private final MapViewer jXMapViewer = new MapViewer();
     private final JComboBox<String> comboMapType = new JComboBox<>();
     private final JButton addWaypoint = new JButton("Add Waypoint");
     private final JButton clearWaypoints = new JButton("Clear Waypoints");
@@ -32,7 +32,6 @@ public class GeoMap extends JFrame {
     private final JButton calculateRoute = new JButton("Calculate Route");
     private final Waypoints waypoints = new Waypoints();
     private boolean addingWaypoint = false;
-    private Itinerary itinerary;
 
     public GeoMap() {
         super("GeoMap - Choisir un point de départ et d'arrivée");
@@ -195,7 +194,7 @@ public class GeoMap extends JFrame {
 
         Arrays.stream(this.jXMapViewer.getComponents()).filter(c -> c.getCursor().getType() == Cursor.HAND_CURSOR).forEach(this.jXMapViewer::remove);
         this.waypoints.waypoints().clear();
-        this.itinerary = null;
+        this.jXMapViewer.setItinerary(null);
         this.update(this.getGraphics());
     }
 
@@ -234,47 +233,11 @@ public class GeoMap extends JFrame {
         this.setTitle(this.getTitle() + " | Distance: " + String.format("%.2f", itinerary.getDistance() / 1000) + "Km");
         if (!this.isVisible()) this.setVisible(true);
 
-        this.itinerary = itinerary;
+        this.jXMapViewer.setItinerary(itinerary);
         this.update(this.getGraphics());
-    }
-
-    private void drawRoute(Path2D path, List<GeoCoordinate> coordinateList) {
-        boolean first = true;
-        for (GeoCoordinate coordinate : coordinateList) {
-            Point2D point = this.jXMapViewer.convertGeoPositionToPoint(new GeoPosition(coordinate.getLatitude(), coordinate.getLongitude()));
-            point.setLocation(point.getX(), point.getY());
-            if (first) {
-                path.moveTo(point.getX(), point.getY());
-                first = false;
-            } else {
-                path.lineTo(point.getX(), point.getY());
-            }
-        }
     }
 
     public Waypoints getWaypoints() {
         return waypoints;
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        if (this.itinerary != null) {
-            // Set up graphics
-            Graphics2D g2d = (Graphics2D) g.create();
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-            // Set up route
-            Path2D path = new Path2D.Double();
-            this.drawRoute(path, this.itinerary.getCoordinates().getValue().getGeoCoordinate());
-
-            // Set up colour
-            g2d.setColor(new Color(0, 176, 255));
-            g2d.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-
-            // Draw
-            g2d.draw(path);
-            g2d.dispose();
-        }
     }
 }

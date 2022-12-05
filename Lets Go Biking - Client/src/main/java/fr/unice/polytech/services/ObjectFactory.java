@@ -63,7 +63,9 @@ public class ObjectFactory {
     private final static QName _StepText_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "text");
     private final static QName _ItineraryBbox_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "bbox");
     private final static QName _ItineraryCoordinates_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "coordinates");
+    private final static QName _ItineraryFromStation_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "fromStation");
     private final static QName _ItinerarySteps_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "steps");
+    private final static QName _ItineraryToStation_QNAME = new QName("http://schemas.datacontract.org/2004/07/SOAP_WCF", "toStation");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: fr.unice.polytech.services
@@ -538,6 +540,17 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "fromStation", scope = Itinerary.class)
+    public JAXBElement<GeoCoordinate> createItineraryFromStation(GeoCoordinate value) {
+        return new JAXBElement<GeoCoordinate>(_ItineraryFromStation_QNAME, GeoCoordinate.class, Itinerary.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
      *
      * @param value Java instance representing xml element's value.
@@ -546,6 +559,17 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "steps", scope = Itinerary.class)
     public JAXBElement<ArrayOfStep> createItinerarySteps(ArrayOfStep value) {
         return new JAXBElement<ArrayOfStep>(_ItinerarySteps_QNAME, ArrayOfStep.class, Itinerary.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "toStation", scope = Itinerary.class)
+    public JAXBElement<GeoCoordinate> createItineraryToStation(GeoCoordinate value) {
+        return new JAXBElement<GeoCoordinate>(_ItineraryToStation_QNAME, GeoCoordinate.class, Itinerary.class, value);
     }
 
 }
