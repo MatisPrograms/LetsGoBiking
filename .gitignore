@@ -1,0 +1,9 @@
+# Ignore all .idea folders and its contents
+.idea
+
+# Ignore all .vscode folders and its contents
+.vscode
+.vs
+
+# Ignore all target folders and its contents
+target
