@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cedd8e6-9050-47fb-b688-48b38a769538" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/.vs/Let's Go Biking/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/.vs/Let's Go Biking/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/RoutingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/RoutingService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +96,7 @@
       <workItem from="1670329421419" duration="114000" />
       <workItem from="1670331974074" duration="639000" />
       <workItem from="1670334610690" duration="152000" />
+      <workItem from="1670349377409" duration="129000" />
     </task>
     <servers />
   </component>

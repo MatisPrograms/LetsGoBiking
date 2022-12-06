@@ -12,6 +12,7 @@ namespace SOAP_WCF
 {
     public class RoutingService : IRoutingService
     {
+        private const double MAX_DISTANCE_MULTI = 1.5;
         private JCDecauxAPIClient JCD;
         private OpenStreetMapAPIClient OSM;
 
@@ -52,7 +53,7 @@ namespace SOAP_WCF
                 GeoCoordinate geoB = Coordinate(stationB);
 
                 double distance = a.GetDistanceTo(geoA) + geoA.GetDistanceTo(geoB) + geoB.GetDistanceTo(b);
-                if (distance > 2 * a.GetDistanceTo(b)) continue;
+                if (distance > MAX_DISTANCE_MULTI * a.GetDistanceTo(b)) continue;
                 if (distance < minDistance)
                 {
                     minDistance = distance;

@@ -1,9 +1,3 @@
-# Ignore all .idea folders and its contents
-.idea
-
-# Ignore all .vscode folders and its contents
-.vscode
-.vs
-
-# Ignore all target folders and its contents
-target
+# ignore .idea and all its files and subdirectories to the repository
+Lets Go Biking - Client/.idea/**/*.*
+Lets Go Biking - Server/.vs
