@@ -106,15 +106,15 @@ Up Right of the Interface, you can select different modes of Map display.
 
 ## Manipulating Waypoints
 
-To compute an itinerary, must add at least two waypoints. To do so, you have to toggle _"Add Waypoint"_ and then click on the map to add waypoints.
+To compute an itinerary, you must add at least two waypoints. To do so, you have to toggle _"Add Waypoint"_ and then click on the map to add waypoints.
 
-To remove a waypoint, you can click _"Clear Waypoints"_ which will remove all waypoints. Or you can click on a waypoint and press _"Remove Waypoint"_.
+To remove a waypoint, you can click _"Clear Waypoints"_ which will remove all waypoints. Or you can click on a waypoint and press _"Remove Waypoint"_ on the pop-up menu.
 
 ## Calculating an itinerary
 
-When two or more waypoints are added, you can compute an itinerary by clicking _"Calculate Route"_, which will compute the itinerary and display it on the map.
+When two or more waypoints are added, you can compute an itinerary by clicking _"Calculate Route"_, which will compute the itinerary and display it on the map. If more than two are added, than the itinerary will consider this stop as a mandatory stop and will compute the itinerary accordingly.
 
-Lastly, you can also compute an itinerary by activting _"ActiveMQ"_ and then clicking on _"Live Route"_, which will compute the itinerary and display it on the map but using through la message Queue.
+Lastly, you can also compute an itinerary by activting _"ActiveMQ"_ and then clicking on _"Live Route"_, which will compute the itinerary and display it on the map as previously mentioned but using through a message queue from ActiveMQ.
 
 ## Stopping the applications
 
