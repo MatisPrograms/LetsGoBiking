@@ -1,5 +1,7 @@
 package fr.unice.polytech;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.unice.polytech.map.GeoMap;
 import fr.unice.polytech.services.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -8,6 +10,7 @@ import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.Waypoint;
 
 import javax.jms.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -93,15 +96,15 @@ public class Main {
     }
 
     private static String distance(double distance) {
-        if (distance < 1000) {
-            return String.format("%.2f", distance) + "m";
-        } else {
-            return String.format("%.2f", distance / 1000) + "km";
-        }
+        // Formatting distance
+        return String.format("%.2f", distance < 1000 ? distance : distance / 1000) + (distance < 1000 ? "m" : "km");
     }
 
     private static String time(double time) {
+        // Time in seconds
         time /= 1000;
+
+        // Formatting time
         if (time < 60) {
             return String.format("%.2f", time) + "s";
         } else if (time < 3600) {
@@ -113,35 +116,33 @@ public class Main {
 
     private static void activeMQ(GeoMap map) {
         try {
-            // Create a ConnectionFactory
+            // Creating a Connection to ActiveMQ
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
             connectionFactory.setTrustAllPackages(true);
-
-            // Create a Connection
             Connection connection = connectionFactory.createConnection("admin", "admin");
             connection.start();
 
-            // Create a Session
+            // Creating a Session and Selecting the Queue
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
-            // Create the destination (Topic or Queue)
             Destination destination = new ActiveMQQueue("Let's Go Biking");
-
-            // Create a MessageConsumer from the Session to the Topic or Queue
             MessageConsumer consumer = session.createConsumer(destination);
 
+            // Action to do when receiving a message
             consumer.setMessageListener(message -> {
                 try {
                     if (message instanceof TextMessage textMessage) {
                         System.out.println("Received message: " + textMessage.getText());
-                        System.err.println("Method not Implemented: @TODO Deserialize message into Itinerary");
+
+                        List<Itinerary> itineraries = new ArrayList<>();
+                        itineraries.add(deserializeItinerary(textMessage.getText()));
+                        map.showDirections(itineraries);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
 
-            // when map exits we close the connection
+            // When map closes, we close the connection
             map.addWindowListener(new java.awt.event.WindowAdapter() {
                 @Override
                 public void windowClosing(java.awt.event.WindowEvent windowEvent) {
@@ -158,7 +159,56 @@ public class Main {
             while (true) ;
         } catch (Exception e) {
             System.out.println("Caught: " + e);
+        }
+    }
+
+    private static Itinerary deserializeItinerary(String msg) {
+        try {
+            // Parsing the message into Itinerary
+            Itinerary itinerary = new Itinerary();
+            ObjectFactory factory = new ObjectFactory();
+            JsonNode jsonNode = new ObjectMapper().readTree(msg);
+
+            // Setting primitive type variables
+            itinerary.setDistance(jsonNode.get("distance").asDouble());
+            itinerary.setDuration(jsonNode.get("duration").asDouble());
+            itinerary.setAscend(jsonNode.get("ascend").asDouble());
+            itinerary.setDescend(jsonNode.get("descend").asDouble());
+
+            // Setting JAXBElement type variables
+            itinerary.setBbox(factory.createItineraryBbox(factory.createArrayOfdouble()));
+            jsonNode.get("bbox").forEach(d -> itinerary.getBbox().getValue().getDouble().add(d.asDouble()));
+
+            itinerary.setCoordinates(factory.createItineraryCoordinates(factory.createArrayOfGeoCoordinate()));
+            jsonNode.get("coordinates").forEach(c -> {
+                GeoCoordinate geoCoordinate = new GeoCoordinate();
+                geoCoordinate.setLatitude(c.get("Latitude").asDouble());
+                geoCoordinate.setLongitude(c.get("Longitude").asDouble());
+                itinerary.getCoordinates().getValue().getGeoCoordinate().add(geoCoordinate);
+            });
+
+            itinerary.setFromStation(factory.createItineraryFromStation(factory.createGeoCoordinate()));
+            itinerary.getFromStation().getValue().setLatitude(jsonNode.get("fromStation").get("Latitude").asDouble());
+            itinerary.getFromStation().getValue().setLongitude(jsonNode.get("fromStation").get("Longitude").asDouble());
+
+            itinerary.setToStation(factory.createItineraryToStation(factory.createGeoCoordinate()));
+            itinerary.getToStation().getValue().setLatitude(jsonNode.get("toStation").get("Latitude").asDouble());
+            itinerary.getToStation().getValue().setLongitude(jsonNode.get("toStation").get("Longitude").asDouble());
+
+            itinerary.setSteps(factory.createItinerarySteps(factory.createArrayOfStep()));
+            jsonNode.get("steps").forEach(s -> {
+                Step step = new Step();
+                step.setText(factory.createString(s.get("text").asText()));
+                step.setStreetName(factory.createString(s.get("street_name").asText()));
+                step.setDistance(s.get("distance").asDouble());
+                step.setDuration(s.get("duration").asDouble());
+                itinerary.getSteps().getValue().getStep().add(step);
+            });
+
+            return itinerary;
+        } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 }

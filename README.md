@@ -114,7 +114,7 @@ To remove a waypoint, you can click _"Clear Waypoints"_ which will remove all wa
 
 When two or more waypoints are added, you can compute an itinerary by clicking _"Calculate Route"_, which will compute the itinerary and display it on the map.
 
-Lastly, it's not finished yet, but you can also compute an itinerary by activting _"ActiveMQ"_ and then clicking on _"Live Route"_, which will compute the itinerary and display it on the map but using through la message Queue. The only part missing is the transfer of the itinerary Object from the server to the client.
+Lastly, you can also compute an itinerary by activting _"ActiveMQ"_ and then clicking on _"Live Route"_, which will compute the itinerary and display it on the map but using through la message Queue.
 
 ## Stopping the applications
 
