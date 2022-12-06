@@ -60,6 +60,12 @@ Build the project
     
     mvn clean install
 
+If you want to re-build jaxws classes, you can run the following command
+
+    mvn jaxws:wsimport
+
+_But if you get import errors when building the project, you can replace javax by jakarta for the missing imports_
+
 Run Client Application
     
     mvn exec:java
