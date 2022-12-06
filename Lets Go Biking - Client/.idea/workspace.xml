@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0cedd8e6-9050-47fb-b688-48b38a769538" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/map/GeoMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/map/GeoMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Lets_Go_Biking_Client-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lets_Go_Biking_Client-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +92,8 @@
       <workItem from="1670326318126" duration="433000" />
       <workItem from="1670326782008" duration="755000" />
       <workItem from="1670329421419" duration="114000" />
+      <workItem from="1670331974074" duration="639000" />
+      <workItem from="1670334610690" duration="152000" />
     </task>
     <servers />
   </component>
