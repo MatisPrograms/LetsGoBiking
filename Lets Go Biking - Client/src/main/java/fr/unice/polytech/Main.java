@@ -80,19 +80,13 @@ public class Main {
     }
 
     private static GeoPosition geoPositionManualInput(String text) {
+        // Manual input of coordinates
         System.out.println("\nEnter " + text + " Location: ");
         System.out.print("Latitude: ");
         double lat = sc.nextDouble();
         System.out.print("Longitude: ");
         double lon = sc.nextDouble();
         return new GeoPosition(lat, lon);
-    }
-
-    private static GeoCoordinate convert(GeoPosition position) {
-        GeoCoordinate geoCoordinate = new GeoCoordinate();
-        geoCoordinate.setLatitude(position.getLatitude());
-        geoCoordinate.setLongitude(position.getLongitude());
-        return geoCoordinate;
     }
 
     private static String distance(double distance) {
@@ -160,6 +154,13 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Caught: " + e);
         }
+    }
+
+    private static GeoCoordinate convert(GeoPosition position) {
+        GeoCoordinate geoCoordinate = new GeoCoordinate();
+        geoCoordinate.setLatitude(position.getLatitude());
+        geoCoordinate.setLongitude(position.getLongitude());
+        return geoCoordinate;
     }
 
     private static Itinerary deserializeItinerary(String msg) {

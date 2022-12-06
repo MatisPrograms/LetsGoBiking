@@ -96,7 +96,7 @@ Now that the server and the client applications are running, you can use the cli
 
 ## Interacting with the GUI
 
-When the GUI is loaded, you can move around the map by dragging the mouse and zomm in and out with the scroll wheel.
+When the GUI is loaded, you can move around the map by dragging the mouse and zoom in and out with the scroll wheel.
 
 Up Right of the Interface, you can select different modes of Map display.
 - Open Street
@@ -106,7 +106,7 @@ Up Right of the Interface, you can select different modes of Map display.
 
 ## Manipulating Waypoints
 
-To compute an itinerary, must must add at least two waypoints. To do so, you have to toggle _"Add Waypoint"_ and then click on the map to add waypoints.
+To compute an itinerary, must add at least two waypoints. To do so, you have to toggle _"Add Waypoint"_ and then click on the map to add waypoints.
 
 To remove a waypoint, you can click _"Clear Waypoints"_ which will remove all waypoints. Or you can click on a waypoint and press _"Remove Waypoint"_.
 

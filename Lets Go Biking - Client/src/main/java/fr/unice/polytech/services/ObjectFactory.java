@@ -1,29 +1,28 @@
-
 package fr.unice.polytech.services;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlElementDecl;
 import jakarta.xml.bind.annotation.XmlRegistry;
+
 import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the fr.unice.polytech.services package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
+ * This object contains factory methods for each
+ * Java content interface and Java element interface
+ * generated in the fr.unice.polytech.services package.
+ * <p>An ObjectFactory allows you to programatically
+ * construct new instances of the Java representation
+ * for XML content. The Java representation of XML
+ * content can consist of schema derived interfaces
+ * and classes representing the binding of schema
+ * type definitions, element declarations and model
+ * groups.  Factory methods for each of these are
  * provided in this class.
- * 
  */
 @XmlRegistry
 public class ObjectFactory {
@@ -73,14 +72,12 @@ public class ObjectFactory {
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: fr.unice.polytech.services
-     * 
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link GetItineraryList }
-     * 
      */
     public GetItineraryList createGetItineraryList() {
         return new GetItineraryList();
@@ -88,7 +85,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ArrayOfGeoCoordinate }
-     * 
      */
     public ArrayOfGeoCoordinate createArrayOfGeoCoordinate() {
         return new ArrayOfGeoCoordinate();
@@ -96,7 +92,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetItineraryListResponse }
-     * 
      */
     public GetItineraryListResponse createGetItineraryListResponse() {
         return new GetItineraryListResponse();
@@ -104,7 +99,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ArrayOfItinerary }
-     * 
      */
     public ArrayOfItinerary createArrayOfItinerary() {
         return new ArrayOfItinerary();
@@ -112,7 +106,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetItinerary }
-     * 
      */
     public GetItinerary createGetItinerary() {
         return new GetItinerary();
@@ -120,7 +113,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GeoCoordinate }
-     * 
      */
     public GeoCoordinate createGeoCoordinate() {
         return new GeoCoordinate();
@@ -128,7 +120,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetItineraryResponse }
-     * 
      */
     public GetItineraryResponse createGetItineraryResponse() {
         return new GetItineraryResponse();
@@ -136,7 +127,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Itinerary }
-     * 
      */
     public Itinerary createItinerary() {
         return new Itinerary();
@@ -144,7 +134,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LiveItinerary }
-     * 
      */
     public LiveItinerary createLiveItinerary() {
         return new LiveItinerary();
@@ -152,7 +141,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LiveItineraryResponse }
-     * 
      */
     public LiveItineraryResponse createLiveItineraryResponse() {
         return new LiveItineraryResponse();
@@ -160,7 +148,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ArrayOfStep }
-     * 
      */
     public ArrayOfStep createArrayOfStep() {
         return new ArrayOfStep();
@@ -168,7 +155,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Step }
-     * 
      */
     public Step createStep() {
         return new Step();
@@ -176,7 +162,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ArrayOfdouble }
-     * 
      */
     public ArrayOfdouble createArrayOfdouble() {
         return new ArrayOfdouble();
@@ -184,11 +169,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/System.Device.Location", name = "ArrayOfGeoCoordinate")
     public JAXBElement<ArrayOfGeoCoordinate> createArrayOfGeoCoordinate(ArrayOfGeoCoordinate value) {
@@ -197,11 +180,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/System.Device.Location", name = "GeoCoordinate")
     public JAXBElement<GeoCoordinate> createGeoCoordinate(GeoCoordinate value) {
@@ -210,11 +191,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "ArrayOfItinerary")
     public JAXBElement<ArrayOfItinerary> createArrayOfItinerary(ArrayOfItinerary value) {
@@ -223,11 +202,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "Itinerary")
     public JAXBElement<Itinerary> createItinerary(Itinerary value) {
@@ -236,11 +213,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "ArrayOfStep")
     public JAXBElement<ArrayOfStep> createArrayOfStep(ArrayOfStep value) {
@@ -249,11 +224,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Step }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Step }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Step }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "Step")
     public JAXBElement<Step> createStep(Step value) {
@@ -262,11 +235,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/Arrays", name = "ArrayOfdouble")
     public JAXBElement<ArrayOfdouble> createArrayOfdouble(ArrayOfdouble value) {
@@ -275,11 +246,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "anyType")
     public JAXBElement<Object> createAnyType(Object value) {
@@ -288,11 +257,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "anyURI")
     public JAXBElement<String> createAnyURI(String value) {
@@ -301,24 +268,20 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "base64Binary")
     public JAXBElement<byte[]> createBase64Binary(byte[] value) {
-        return new JAXBElement<byte[]>(_Base64Binary_QNAME, byte[].class, null, ((byte[]) value));
+        return new JAXBElement<byte[]>(_Base64Binary_QNAME, byte[].class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "boolean")
     public JAXBElement<Boolean> createBoolean(Boolean value) {
@@ -327,11 +290,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Byte }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Byte }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Byte }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "byte")
     public JAXBElement<Byte> createByte(Byte value) {
@@ -340,11 +301,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "dateTime")
     public JAXBElement<XMLGregorianCalendar> createDateTime(XMLGregorianCalendar value) {
@@ -353,11 +312,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "decimal")
     public JAXBElement<BigDecimal> createDecimal(BigDecimal value) {
@@ -366,11 +323,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Double }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Double }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "double")
     public JAXBElement<Double> createDouble(Double value) {
@@ -379,11 +334,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Float }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Float }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Float }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "float")
     public JAXBElement<Float> createFloat(Float value) {
@@ -392,11 +345,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "int")
     public JAXBElement<Integer> createInt(Integer value) {
@@ -405,11 +356,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "long")
     public JAXBElement<Long> createLong(Long value) {
@@ -418,11 +367,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link QName }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link QName }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link QName }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "QName")
     public JAXBElement<QName> createQName(QName value) {
@@ -431,11 +378,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Short }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Short }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Short }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "short")
     public JAXBElement<Short> createShort(Short value) {
@@ -444,11 +389,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "string")
     public JAXBElement<String> createString(String value) {
@@ -457,11 +400,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Short }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Short }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Short }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "unsignedByte")
     public JAXBElement<Short> createUnsignedByte(Short value) {
@@ -470,11 +411,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "unsignedInt")
     public JAXBElement<Long> createUnsignedInt(Long value) {
@@ -483,11 +422,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "unsignedLong")
     public JAXBElement<BigInteger> createUnsignedLong(BigInteger value) {
@@ -496,11 +433,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "unsignedShort")
     public JAXBElement<Integer> createUnsignedShort(Integer value) {
@@ -509,11 +444,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "char")
     public JAXBElement<Integer> createChar(Integer value) {
@@ -522,11 +455,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Duration }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Duration }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Duration }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "duration")
     public JAXBElement<Duration> createDuration(Duration value) {
@@ -535,11 +466,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "guid")
     public JAXBElement<String> createGuid(String value) {
@@ -548,11 +477,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "coordinates", scope = GetItineraryList.class)
     public JAXBElement<ArrayOfGeoCoordinate> createGetItineraryListCoordinates(ArrayOfGeoCoordinate value) {
@@ -561,11 +488,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "GetItineraryListResult", scope = GetItineraryListResponse.class)
     public JAXBElement<ArrayOfItinerary> createGetItineraryListResponseGetItineraryListResult(ArrayOfItinerary value) {
@@ -574,11 +499,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "origin", scope = GetItinerary.class)
     public JAXBElement<GeoCoordinate> createGetItineraryOrigin(GeoCoordinate value) {
@@ -587,11 +510,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "destination", scope = GetItinerary.class)
     public JAXBElement<GeoCoordinate> createGetItineraryDestination(GeoCoordinate value) {
@@ -600,11 +521,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "GetItineraryResult", scope = GetItineraryResponse.class)
     public JAXBElement<Itinerary> createGetItineraryResponseGetItineraryResult(Itinerary value) {
@@ -613,11 +532,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "current", scope = LiveItinerary.class)
     public JAXBElement<GeoCoordinate> createLiveItineraryCurrent(GeoCoordinate value) {
@@ -626,11 +543,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "goal", scope = LiveItinerary.class)
     public JAXBElement<GeoCoordinate> createLiveItineraryGoal(GeoCoordinate value) {
@@ -639,11 +554,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "street_name", scope = Step.class)
     public JAXBElement<String> createStepStreetName(String value) {
@@ -652,11 +565,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "text", scope = Step.class)
     public JAXBElement<String> createStepText(String value) {
@@ -665,11 +576,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "bbox", scope = Itinerary.class)
     public JAXBElement<ArrayOfdouble> createItineraryBbox(ArrayOfdouble value) {
@@ -678,11 +587,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "coordinates", scope = Itinerary.class)
     public JAXBElement<ArrayOfGeoCoordinate> createItineraryCoordinates(ArrayOfGeoCoordinate value) {
@@ -691,11 +598,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "fromStation", scope = Itinerary.class)
     public JAXBElement<GeoCoordinate> createItineraryFromStation(GeoCoordinate value) {
@@ -704,11 +609,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "steps", scope = Itinerary.class)
     public JAXBElement<ArrayOfStep> createItinerarySteps(ArrayOfStep value) {
@@ -717,11 +620,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *
+     * @param value Java instance representing xml element's value.
+     * @return the new instance of {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", name = "toStation", scope = Itinerary.class)
     public JAXBElement<GeoCoordinate> createItineraryToStation(GeoCoordinate value) {

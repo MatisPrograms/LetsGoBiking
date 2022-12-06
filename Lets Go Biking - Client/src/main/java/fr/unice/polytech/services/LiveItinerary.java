@@ -1,19 +1,14 @@
-
 package fr.unice.polytech.services;
 
 import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -26,13 +21,11 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "current",
-    "goal"
+        "current",
+        "goal"
 })
 @XmlRootElement(name = "LiveItinerary")
 public class LiveItinerary {
@@ -44,11 +37,9 @@ public class LiveItinerary {
 
     /**
      * Gets the value of the current property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     *     
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     public JAXBElement<GeoCoordinate> getCurrent() {
         return current;
@@ -56,11 +47,9 @@ public class LiveItinerary {
 
     /**
      * Sets the value of the current property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     *     
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     public void setCurrent(JAXBElement<GeoCoordinate> value) {
         this.current = value;
@@ -68,11 +57,9 @@ public class LiveItinerary {
 
     /**
      * Gets the value of the goal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     *     
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     public JAXBElement<GeoCoordinate> getGoal() {
         return goal;
@@ -80,11 +67,9 @@ public class LiveItinerary {
 
     /**
      * Sets the value of the goal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
-     *     
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      */
     public void setGoal(JAXBElement<GeoCoordinate> value) {
         this.goal = value;

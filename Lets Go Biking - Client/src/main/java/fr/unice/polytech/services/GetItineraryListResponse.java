@@ -1,19 +1,14 @@
-
 package fr.unice.polytech.services;
 
 import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -25,12 +20,10 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getItineraryListResult"
+        "getItineraryListResult"
 })
 @XmlRootElement(name = "GetItineraryListResponse")
 public class GetItineraryListResponse {
@@ -40,11 +33,9 @@ public class GetItineraryListResponse {
 
     /**
      * Gets the value of the getItineraryListResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
-     *     
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
     public JAXBElement<ArrayOfItinerary> getGetItineraryListResult() {
         return getItineraryListResult;
@@ -52,11 +43,9 @@ public class GetItineraryListResponse {
 
     /**
      * Sets the value of the getItineraryListResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
-     *     
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link ArrayOfItinerary }{@code >}
      */
     public void setGetItineraryListResult(JAXBElement<ArrayOfItinerary> value) {
         this.getItineraryListResult = value;

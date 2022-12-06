@@ -1,19 +1,14 @@
-
 package fr.unice.polytech.services;
 
 import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -25,12 +20,10 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getItineraryResult"
+        "getItineraryResult"
 })
 @XmlRootElement(name = "GetItineraryResponse")
 public class GetItineraryResponse {
@@ -40,11 +33,9 @@ public class GetItineraryResponse {
 
     /**
      * Gets the value of the getItineraryResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
-     *     
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
      */
     public JAXBElement<Itinerary> getGetItineraryResult() {
         return getItineraryResult;
@@ -52,11 +43,9 @@ public class GetItineraryResponse {
 
     /**
      * Sets the value of the getItineraryResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
-     *     
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link Itinerary }{@code >}
      */
     public void setGetItineraryResult(JAXBElement<Itinerary> value) {
         this.getItineraryResult = value;

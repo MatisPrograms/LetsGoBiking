@@ -9,8 +9,34 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfGeoCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfGeoCoordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfItinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfItinerary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfdouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ArrayOfdouble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GeoCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GeoCoordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItinerary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItineraryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItineraryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItineraryListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItineraryListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItineraryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/GetItineraryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/IRoutingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/IRoutingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/Itinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/Itinerary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/LiveItinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/LiveItinerary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/LiveItineraryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/LiveItineraryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/RoutingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/RoutingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/services/Step.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/unice/polytech/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/unice/polytech/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/unice/polytech/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/unice/polytech/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/unice/polytech/services/Itinerary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/unice/polytech/services/Itinerary.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/.vs/Let's Go Biking/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/.vs/Let's Go Biking/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP Server/bin/Debug/SOAP WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP Server/obj/Debug/SOAP Server.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/bin/Debug/SOAP WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/SOAP WCF/obj/Debug/SOAP WCF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +124,7 @@
       <workItem from="1670329421419" duration="114000" />
       <workItem from="1670331974074" duration="639000" />
       <workItem from="1670334610690" duration="152000" />
-      <workItem from="1670349377409" duration="4521000" />
+      <workItem from="1670349377409" duration="6645000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,3 @@
-
 package fr.unice.polytech.services;
 
 import jakarta.xml.bind.JAXBElement;
@@ -10,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Step complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Step"&gt;
  *   &lt;complexContent&gt;
@@ -27,15 +26,13 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Step", namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", propOrder = {
-    "distance",
-    "duration",
-    "streetName",
-    "text"
+        "distance",
+        "duration",
+        "streetName",
+        "text"
 })
 public class Step {
 
@@ -48,11 +45,9 @@ public class Step {
 
     /**
      * Gets the value of the distance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is
+     * {@link Double }
      */
     public Double getDistance() {
         return distance;
@@ -60,11 +55,9 @@ public class Step {
 
     /**
      * Sets the value of the distance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Double }
      */
     public void setDistance(Double value) {
         this.distance = value;
@@ -72,11 +65,9 @@ public class Step {
 
     /**
      * Gets the value of the duration property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is
+     * {@link Double }
      */
     public Double getDuration() {
         return duration;
@@ -84,11 +75,9 @@ public class Step {
 
     /**
      * Sets the value of the duration property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Double }
      */
     public void setDuration(Double value) {
         this.duration = value;
@@ -96,11 +85,9 @@ public class Step {
 
     /**
      * Gets the value of the streetName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     public JAXBElement<String> getStreetName() {
         return streetName;
@@ -108,11 +95,9 @@ public class Step {
 
     /**
      * Sets the value of the streetName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     public void setStreetName(JAXBElement<String> value) {
         this.streetName = value;
@@ -120,11 +105,9 @@ public class Step {
 
     /**
      * Gets the value of the text property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
+     *
+     * @return possible object is
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     public JAXBElement<String> getText() {
         return text;
@@ -132,11 +115,9 @@ public class Step {
 
     /**
      * Sets the value of the text property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
+     *
+     * @param value allowed object is
+     *              {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     public void setText(JAXBElement<String> value) {
         this.text = value;
