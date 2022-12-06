@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static final IRoutingService ITINERARY_SERVICE = new RoutingService().getWSHttpBindingIRoutingService();
     private static final Scanner sc = new Scanner(System.in);
+    public static IRoutingService ITINERARY_SERVICE;
 
     public static void main(String[] args) {
         // opening a java swing map
@@ -43,6 +43,7 @@ public class Main {
 
         // Ask for directions to routing server
         System.out.println("Asking for directions from " + origin + " to " + destination);
+        if (ITINERARY_SERVICE == null) ITINERARY_SERVICE = new RoutingService().getWSHttpBindingIRoutingService();
         if (map.isActivatingMQ()) {
             ITINERARY_SERVICE.liveItinerary(convert(origin), convert(destination));
             System.out.println("Waiting for message in ActiveMQ");

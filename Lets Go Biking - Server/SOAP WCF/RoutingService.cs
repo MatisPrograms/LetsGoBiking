@@ -52,6 +52,7 @@ namespace SOAP_WCF
                 GeoCoordinate geoB = Coordinate(stationB);
 
                 double distance = a.GetDistanceTo(geoA) + geoA.GetDistanceTo(geoB) + geoB.GetDistanceTo(b);
+                if (distance > 2 * a.GetDistanceTo(b)) continue;
                 if (distance < minDistance)
                 {
                     minDistance = distance;
