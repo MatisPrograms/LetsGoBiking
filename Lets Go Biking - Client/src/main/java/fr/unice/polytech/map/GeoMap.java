@@ -177,8 +177,10 @@ public class GeoMap extends JFrame {
     private void activeMQButtonColour(boolean activatingMQ) {
         if (activatingMQ) {
             this.activeMQ.setBackground(PALE_GREEN);
+            this.calculateRoute.setText("Live Route");
         } else {
             this.activeMQ.setBackground(null);
+            this.calculateRoute.setText("Calculate Route");
         }
         this.repaint();
     }
