@@ -1,3 +1,4 @@
+
 package fr.unice.polytech.services;
 
 import jakarta.xml.bind.JAXBElement;
@@ -9,9 +10,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Itinerary complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Itinerary"&gt;
  *   &lt;complexContent&gt;
@@ -31,18 +32,20 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Itinerary", propOrder = {
-        "ascend",
-        "bbox",
-        "coordinates",
-        "descend",
-        "distance",
-        "duration",
-        "fromStation",
-        "steps",
-        "toStation"
+@XmlType(name = "Itinerary", namespace = "http://schemas.datacontract.org/2004/07/SOAP_WCF", propOrder = {
+    "ascend",
+    "bbox",
+    "coordinates",
+    "descend",
+    "distance",
+    "duration",
+    "fromStation",
+    "steps",
+    "toStation"
 })
 public class Itinerary {
 
@@ -63,9 +66,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the ascend property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getAscend() {
         return ascend;
@@ -73,9 +78,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the ascend property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setAscend(Double value) {
         this.ascend = value;
@@ -83,9 +90,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the bbox property.
-     *
-     * @return possible object is
-     * {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     *     
      */
     public JAXBElement<ArrayOfdouble> getBbox() {
         return bbox;
@@ -93,9 +102,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the bbox property.
-     *
-     * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link ArrayOfdouble }{@code >}
+     *     
      */
     public void setBbox(JAXBElement<ArrayOfdouble> value) {
         this.bbox = value;
@@ -103,9 +114,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the coordinates property.
-     *
-     * @return possible object is
-     * {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     *     
      */
     public JAXBElement<ArrayOfGeoCoordinate> getCoordinates() {
         return coordinates;
@@ -113,9 +126,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the coordinates property.
-     *
-     * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link ArrayOfGeoCoordinate }{@code >}
+     *     
      */
     public void setCoordinates(JAXBElement<ArrayOfGeoCoordinate> value) {
         this.coordinates = value;
@@ -123,9 +138,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the descend property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getDescend() {
         return descend;
@@ -133,9 +150,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the descend property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setDescend(Double value) {
         this.descend = value;
@@ -143,9 +162,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the distance property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getDistance() {
         return distance;
@@ -153,9 +174,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the distance property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setDistance(Double value) {
         this.distance = value;
@@ -163,9 +186,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the duration property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getDuration() {
         return duration;
@@ -173,9 +198,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the duration property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setDuration(Double value) {
         this.duration = value;
@@ -183,9 +210,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the fromStation property.
-     *
-     * @return possible object is
-     * {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *     
      */
     public JAXBElement<GeoCoordinate> getFromStation() {
         return fromStation;
@@ -193,9 +222,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the fromStation property.
-     *
-     * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *     
      */
     public void setFromStation(JAXBElement<GeoCoordinate> value) {
         this.fromStation = value;
@@ -203,9 +234,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the steps property.
-     *
-     * @return possible object is
-     * {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
+     *     
      */
     public JAXBElement<ArrayOfStep> getSteps() {
         return steps;
@@ -213,9 +246,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the steps property.
-     *
-     * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link ArrayOfStep }{@code >}
+     *     
      */
     public void setSteps(JAXBElement<ArrayOfStep> value) {
         this.steps = value;
@@ -223,9 +258,11 @@ public class Itinerary {
 
     /**
      * Gets the value of the toStation property.
-     *
-     * @return possible object is
-     * {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *     
      */
     public JAXBElement<GeoCoordinate> getToStation() {
         return toStation;
@@ -233,9 +270,11 @@ public class Itinerary {
 
     /**
      * Sets the value of the toStation property.
-     *
-     * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
+     *     
      */
     public void setToStation(JAXBElement<GeoCoordinate> value) {
         this.toStation = value;

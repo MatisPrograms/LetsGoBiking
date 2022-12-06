@@ -1,10 +1,13 @@
 fr\unice\polytech\services\Itinerary.class
+fr\unice\polytech\Main$1.class
 fr\unice\polytech\map\MapViewer.class
 fr\unice\polytech\services\ArrayOfStep.class
 fr\unice\polytech\services\ArrayOfdouble.class
 fr\unice\polytech\map\GeoMap.class
 fr\unice\polytech\services\GeoCoordinate.class
+fr\unice\polytech\services\LiveItinerary.class
 fr\unice\polytech\services\package-info.class
+fr\unice\polytech\services\LiveItineraryResponse.class
 fr\unice\polytech\services\GetItinerary.class
 fr\unice\polytech\services\RoutingService.class
 fr\unice\polytech\map\Waypoints.class

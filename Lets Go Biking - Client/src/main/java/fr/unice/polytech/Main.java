@@ -1,22 +1,23 @@
 package fr.unice.polytech;
 
 import fr.unice.polytech.map.GeoMap;
-import fr.unice.polytech.services.ArrayOfGeoCoordinate;
-import fr.unice.polytech.services.GeoCoordinate;
-import fr.unice.polytech.services.Itinerary;
-import fr.unice.polytech.services.RoutingService;
+import fr.unice.polytech.services.*;
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.command.ActiveMQQueue;
 import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.Waypoint;
 
+import javax.jms.*;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    public static final IRoutingService ITINERARY_SERVICE = new RoutingService().getWSHttpBindingIRoutingService();
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         // opening a java swing map
-        new GeoMap();
+        new Thread(() -> activeMQ(new GeoMap())).start();
     }
 
     public static void calculateItinerary(GeoMap map) {
@@ -30,7 +31,7 @@ public class Main {
         } else {
             origin = geoPositionManualInput("Origin");
         }
-        System.out.printf("Origin: %s, %s\n", origin.getLatitude(), origin.getLongitude());
+        System.out.printf("Origin: %.2f, %.2f\n", origin.getLatitude(), origin.getLongitude());
 
         GeoPosition destination;
         if (waypoints.size() > 1) {
@@ -38,32 +39,40 @@ public class Main {
         } else {
             destination = geoPositionManualInput("Destination");
         }
-        System.out.printf("Destination: %s, %s\n\n", destination.getLatitude(), destination.getLongitude());
+        System.out.printf("Destination: %.2f, %.2f\n\n", destination.getLatitude(), destination.getLongitude());
 
         // Ask for directions to routing server
         System.out.println("Asking for directions from " + origin + " to " + destination);
-        ArrayOfGeoCoordinate directions = new ArrayOfGeoCoordinate();
-        directions.getGeoCoordinate().addAll(waypoints.stream().map(Waypoint::getPosition).map(Main::convert).toList());
+        if (map.isActivatingMQ()) {
+            ITINERARY_SERVICE.liveItinerary(convert(origin), convert(destination));
+            System.out.println("Waiting for message in ActiveMQ");
+        } else {
+            ArrayOfGeoCoordinate directions = new ArrayOfGeoCoordinate();
+            directions.getGeoCoordinate().addAll(waypoints.stream().map(Waypoint::getPosition).map(Main::convert).toList());
+            try {
+                List<Itinerary> itineraries = ITINERARY_SERVICE.getItineraryList(directions).getItinerary();
+                if (itineraries == null) {
+                    System.err.println("No itineraries found");
+                    return;
+                }
+                for (Itinerary itinerary : itineraries) {
+                    printInformationItinerary(itinerary);
+                }
 
-        try {
-            List<Itinerary> itineraries = new RoutingService().getWSHttpBindingIRoutingService().getItineraryList(directions).getItinerary();
-            if (itineraries == null) {
-                System.err.println("No itineraries found");
-                return;
+                // Displaying directions
+                map.showDirections(itineraries);
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+                map.dispose();
+                System.exit(-1);
             }
-            for (Itinerary itinerary : itineraries) {
-                System.out.println("Directions received from server:");
-                System.out.println("Total distance: " + distance(itinerary.getDistance()) + " ↑" + distance(itinerary.getAscend()) + " ↓" + distance(itinerary.getDescend()));
-                System.out.println("Total time: " + time(itinerary.getDuration()));
-            }
-
-            // Displaying directions
-            map.showDirections(itineraries);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            map.dispose();
-            System.exit(-1);
         }
+    }
+
+    private static void printInformationItinerary(Itinerary itinerary) {
+        System.out.println("Directions received from server:");
+        System.out.println("Total distance: " + distance(itinerary.getDistance()) + " ↑" + distance(itinerary.getAscend()) + " ↓" + distance(itinerary.getDescend()));
+        System.out.println("Total time: " + time(itinerary.getDuration()));
     }
 
     private static GeoPosition geoPositionManualInput(String text) {
@@ -98,6 +107,57 @@ public class Main {
             return String.format("%.2f", time / 60) + "min";
         } else {
             return String.format("%.2f", time / 3600) + "h";
+        }
+    }
+
+    private static void activeMQ(GeoMap map) {
+        try {
+            // Create a ConnectionFactory
+            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
+            connectionFactory.setTrustAllPackages(true);
+
+            // Create a Connection
+            Connection connection = connectionFactory.createConnection("admin", "admin");
+            connection.start();
+
+            // Create a Session
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+            // Create the destination (Topic or Queue)
+            Destination destination = new ActiveMQQueue("Let's Go Biking");
+
+            // Create a MessageConsumer from the Session to the Topic or Queue
+            MessageConsumer consumer = session.createConsumer(destination);
+
+            consumer.setMessageListener(message -> {
+                try {
+                    if (message instanceof TextMessage textMessage) {
+                        System.out.println("Received message: " + textMessage.getText());
+                        System.err.println("Method not Implemented: @TODO Deserialize message into Itinerary");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+
+            // when map exits we close the connection
+            map.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    try {
+                        consumer.close();
+                        session.close();
+                        connection.close();
+                    } catch (JMSException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            while (true) ;
+        } catch (Exception e) {
+            System.out.println("Caught: " + e);
+            e.printStackTrace();
         }
     }
 }

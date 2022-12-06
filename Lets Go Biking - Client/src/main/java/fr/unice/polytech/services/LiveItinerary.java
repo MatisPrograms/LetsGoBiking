@@ -19,8 +19,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="origin" type="{http://schemas.datacontract.org/2004/07/System.Device.Location}GeoCoordinate" minOccurs="0"/&gt;
- *         &lt;element name="destination" type="{http://schemas.datacontract.org/2004/07/System.Device.Location}GeoCoordinate" minOccurs="0"/&gt;
+ *         &lt;element name="current" type="{http://schemas.datacontract.org/2004/07/System.Device.Location}GeoCoordinate" minOccurs="0"/&gt;
+ *         &lt;element name="goal" type="{http://schemas.datacontract.org/2004/07/System.Device.Location}GeoCoordinate" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -31,63 +31,63 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "origin",
-    "destination"
+    "current",
+    "goal"
 })
-@XmlRootElement(name = "GetItinerary")
-public class GetItinerary {
+@XmlRootElement(name = "LiveItinerary")
+public class LiveItinerary {
 
-    @XmlElementRef(name = "origin", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<GeoCoordinate> origin;
-    @XmlElementRef(name = "destination", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<GeoCoordinate> destination;
+    @XmlElementRef(name = "current", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    protected JAXBElement<GeoCoordinate> current;
+    @XmlElementRef(name = "goal", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    protected JAXBElement<GeoCoordinate> goal;
 
     /**
-     * Gets the value of the origin property.
+     * Gets the value of the current property.
      * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      *     
      */
-    public JAXBElement<GeoCoordinate> getOrigin() {
-        return origin;
+    public JAXBElement<GeoCoordinate> getCurrent() {
+        return current;
     }
 
     /**
-     * Sets the value of the origin property.
+     * Sets the value of the current property.
      * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      *     
      */
-    public void setOrigin(JAXBElement<GeoCoordinate> value) {
-        this.origin = value;
+    public void setCurrent(JAXBElement<GeoCoordinate> value) {
+        this.current = value;
     }
 
     /**
-     * Gets the value of the destination property.
+     * Gets the value of the goal property.
      * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      *     
      */
-    public JAXBElement<GeoCoordinate> getDestination() {
-        return destination;
+    public JAXBElement<GeoCoordinate> getGoal() {
+        return goal;
     }
 
     /**
-     * Sets the value of the destination property.
+     * Sets the value of the goal property.
      * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link GeoCoordinate }{@code >}
      *     
      */
-    public void setDestination(JAXBElement<GeoCoordinate> value) {
-        this.destination = value;
+    public void setGoal(JAXBElement<GeoCoordinate> value) {
+        this.goal = value;
     }
 
 }

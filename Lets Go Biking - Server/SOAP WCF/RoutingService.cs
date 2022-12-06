@@ -155,7 +155,7 @@ namespace SOAP_WCF
         {
             try
             {
-                IConnection connection = new ConnectionFactory(new Uri("activemq:tcp://localhost:61616")).CreateConnection();
+                IConnection connection = new ConnectionFactory(new Uri("tcp://localhost:61616")).CreateConnection();
                 connection.Start();
                 ISession session = connection.CreateSession();
 

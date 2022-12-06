@@ -17,17 +17,21 @@ import java.util.List;
 
 public class GeoMap extends JFrame {
 
+    public static final Color PALE_RED = new Color(255, 104, 99);
+    public static final Color PALE_GREEN = new Color(152, 251, 152);
+    public static final Color PALE_ORANGE = new Color(250, 200, 130);
     private static final GeoPosition ANTIBES = new GeoPosition(43.5804, 7.1164);
     private static final int DEFAULT_ZOOM = 12;
-
     private final MapViewer jXMapViewer = new MapViewer();
     private final JComboBox<String> comboMapType = new JComboBox<>();
     private final JButton addWaypoint = new JButton("Add Waypoint");
     private final JButton clearWaypoints = new JButton("Clear Waypoints");
 
     private final JButton calculateRoute = new JButton("Calculate Route");
+    private final JButton activeMQ = new JButton("ActiveMQ");
     private final Waypoints waypoints = new Waypoints();
     private boolean addingWaypoint = false;
+    private boolean activatingMQ = false;
 
     public GeoMap() {
         super("GeoMap - Choisir un point de départ et d'arrivée");
@@ -103,6 +107,7 @@ public class GeoMap extends JFrame {
         this.addWaypoint.addActionListener(this::addWaypoint);
         this.clearWaypoints.addActionListener(this::clearWaypoints);
         this.calculateRoute.addActionListener(this::calculateRoute);
+        this.activeMQ.addActionListener(this::activeMQ);
     }
 
     /**
@@ -121,8 +126,10 @@ public class GeoMap extends JFrame {
                                 .addComponent(this.clearWaypoints)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 0, Short.MAX_VALUE)
                                 .addComponent(this.calculateRoute)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 800, Short.MAX_VALUE)
-                                .addComponent(this.comboMapType, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 0, Short.MAX_VALUE)
+                                .addComponent(this.activeMQ)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, this.getWidth() / 2, Short.MAX_VALUE)
+                                .addComponent(this.comboMapType, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
         );
         jXMapViewerLayout.setVerticalGroup(
@@ -132,7 +139,8 @@ public class GeoMap extends JFrame {
                                         .addComponent(this.comboMapType, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(this.addWaypoint)
                                         .addComponent(this.clearWaypoints)
-                                        .addComponent(this.calculateRoute))
+                                        .addComponent(this.calculateRoute)
+                                        .addComponent(this.activeMQ))
                                 .addContainerGap(600, Short.MAX_VALUE)
                         ));
 
@@ -159,11 +167,20 @@ public class GeoMap extends JFrame {
 
     private void waypointButtonColour(boolean addingWaypoint) {
         if (addingWaypoint) {
-            this.addWaypoint.setBackground(new Color(152, 251, 152));
+            this.addWaypoint.setBackground(PALE_GREEN);
         } else {
             this.addWaypoint.setBackground(null);
         }
-        this.update(this.getGraphics());
+        this.repaint();
+    }
+
+    private void activeMQButtonColour(boolean activatingMQ) {
+        if (activatingMQ) {
+            this.activeMQ.setBackground(PALE_GREEN);
+        } else {
+            this.activeMQ.setBackground(null);
+        }
+        this.repaint();
     }
 
     private void addWaypoint(ActionEvent actionEvent) {
@@ -173,7 +190,7 @@ public class GeoMap extends JFrame {
 
     private void clearWaypoints(ActionEvent actionEvent) {
         new Thread(() -> {
-            this.clearWaypoints.setBackground(new Color(255, 104, 99));
+            this.clearWaypoints.setBackground(PALE_RED);
             try {
                 Thread.sleep(250);
             } catch (InterruptedException e) {
@@ -185,7 +202,7 @@ public class GeoMap extends JFrame {
         Arrays.stream(this.jXMapViewer.getComponents()).filter(c -> c.getCursor().getType() == Cursor.HAND_CURSOR).forEach(this.jXMapViewer::remove);
         this.waypoints.waypoints().clear();
         this.jXMapViewer.setItinerary(null);
-        this.update(this.getGraphics());
+        this.repaint();
     }
 
     private void changeMapMode(ActionEvent actionEvent) {
@@ -202,7 +219,7 @@ public class GeoMap extends JFrame {
 
     private void calculateRoute(ActionEvent actionEvent) {
         new Thread(() -> {
-            this.calculateRoute.setBackground(new Color(250, 200, 130));
+            this.calculateRoute.setBackground(PALE_ORANGE);
             try {
                 Thread.sleep(250);
             } catch (InterruptedException e) {
@@ -216,16 +233,25 @@ public class GeoMap extends JFrame {
 
         if (this.waypoints.waypoints().isEmpty()) this.setVisible(false);
         Main.calculateItinerary(this);
-        this.update(this.getGraphics());
+        this.repaint();
+    }
+
+    private void activeMQ(ActionEvent actionEvent) {
+        this.activatingMQ = !this.activatingMQ;
+        this.activeMQButtonColour(this.activatingMQ);
     }
 
     public void showDirections(List<Itinerary> itineraries) {
         if (!this.isVisible()) this.setVisible(true);
         this.jXMapViewer.setItinerary(itineraries);
-        this.update(this.getGraphics());
+        this.repaint();
     }
 
     public Waypoints getWaypoints() {
         return waypoints;
+    }
+
+    public boolean isActivatingMQ() {
+        return activatingMQ;
     }
 }

@@ -1,3 +1,4 @@
+
 package fr.unice.polytech.services;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -8,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for GeoCoordinate complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="GeoCoordinate"&gt;
  *   &lt;complexContent&gt;
@@ -28,16 +29,18 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GeoCoordinate", namespace = "http://schemas.datacontract.org/2004/07/System.Device.Location", propOrder = {
-        "altitude",
-        "course",
-        "horizontalAccuracy",
-        "latitude",
-        "longitude",
-        "speed",
-        "verticalAccuracy"
+    "altitude",
+    "course",
+    "horizontalAccuracy",
+    "latitude",
+    "longitude",
+    "speed",
+    "verticalAccuracy"
 })
 public class GeoCoordinate {
 
@@ -58,9 +61,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the altitude property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getAltitude() {
         return altitude;
@@ -68,9 +73,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the altitude property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setAltitude(Double value) {
         this.altitude = value;
@@ -78,9 +85,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the course property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getCourse() {
         return course;
@@ -88,9 +97,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the course property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setCourse(Double value) {
         this.course = value;
@@ -98,9 +109,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the horizontalAccuracy property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getHorizontalAccuracy() {
         return horizontalAccuracy;
@@ -108,9 +121,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the horizontalAccuracy property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setHorizontalAccuracy(Double value) {
         this.horizontalAccuracy = value;
@@ -118,9 +133,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the latitude property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getLatitude() {
         return latitude;
@@ -128,9 +145,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the latitude property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setLatitude(Double value) {
         this.latitude = value;
@@ -138,9 +157,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the longitude property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getLongitude() {
         return longitude;
@@ -148,9 +169,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the longitude property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setLongitude(Double value) {
         this.longitude = value;
@@ -158,9 +181,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the speed property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getSpeed() {
         return speed;
@@ -168,9 +193,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the speed property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setSpeed(Double value) {
         this.speed = value;
@@ -178,9 +205,11 @@ public class GeoCoordinate {
 
     /**
      * Gets the value of the verticalAccuracy property.
-     *
-     * @return possible object is
-     * {@link Double }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
     public Double getVerticalAccuracy() {
         return verticalAccuracy;
@@ -188,9 +217,11 @@ public class GeoCoordinate {
 
     /**
      * Sets the value of the verticalAccuracy property.
-     *
-     * @param value allowed object is
-     *              {@link Double }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
     public void setVerticalAccuracy(Double value) {
         this.verticalAccuracy = value;
