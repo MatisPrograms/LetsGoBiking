@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0cedd8e6-9050-47fb-b688-48b38a769538" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/map/MapViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/unice/polytech/map/MapViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lets Go Biking - Server/.vs/Let's Go Biking/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Lets Go Biking - Server/.vs/Let's Go Biking/v17/.suo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +34,7 @@
   </component>
   <component name="ProjectId" id="2ITKuAmKDaXgFryVBoSprK1OdgT" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -97,6 +100,9 @@
       <workItem from="1670358319308" duration="388000" />
       <workItem from="1670359733856" duration="164000" />
       <workItem from="1670402737545" duration="631000" />
+      <workItem from="1670413893128" duration="263000" />
+      <workItem from="1670421663720" duration="1144000" />
+      <workItem from="1670424418016" duration="1546000" />
     </task>
     <servers />
   </component>

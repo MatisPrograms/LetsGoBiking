@@ -26,7 +26,6 @@ public class MapViewer extends JXMapViewer {
         boolean first = true;
         for (GeoCoordinate coordinate : coordinateList) {
             Point2D point = this.convertGeoPositionToPoint(new GeoPosition(coordinate.getLatitude(), coordinate.getLongitude()));
-            point.setLocation(point.getX(), point.getY());
             if (first) {
                 path.moveTo(point.getX(), point.getY());
                 first = false;
@@ -51,7 +50,6 @@ public class MapViewer extends JXMapViewer {
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 g2d.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
-
                 // Separate list of coordinates into sublist before fromStation, between fromStation and toStation, and after toStation
                 List<GeoCoordinate> coordinates = itinerary.getCoordinates().getValue().getGeoCoordinate();
                 GeoCoordinate from = itinerary.getFromStation().getValue();
@@ -64,29 +62,25 @@ public class MapViewer extends JXMapViewer {
                         indexA++;
                     }
 
-                    int indexB = indexA + 1;
-                    for (GeoCoordinate coordinate : coordinates.subList(Math.min(indexA + 1, coordinates.size() - 1), coordinates.size() - 1)) {
-                        if (isCloseTo(coordinate, to)) break;
-                        indexB++;
-                    }
-
-                    List<GeoCoordinate> before = coordinates.subList(0, Math.min(indexA, coordinates.size() - 1));
-                    List<GeoCoordinate> between = coordinates.subList(Math.min(indexA + 1, coordinates.size() - 1), Math.min(indexB, coordinates.size() - 1));
-                    List<GeoCoordinate> after = coordinates.subList(Math.min(indexB + 1, coordinates.size() - 1), coordinates.size() - 1);
-
                     Path2D pathA = new Path2D.Double();
-                    this.drawRoute(pathA, before);
+                    this.drawRoute(pathA, coordinates.subList(0, Math.min(indexA + 1, coordinates.size())));
                     g2d.setColor(FOOT);
                     g2d.draw(pathA);
 
                     if (indexA < coordinates.size()) {
+                        int indexB = indexA;
+                        for (GeoCoordinate coordinate : coordinates.subList(indexA, coordinates.size())) {
+                            if (isCloseTo(coordinate, to)) break;
+                            indexB++;
+                        }
+
                         Path2D pathB = new Path2D.Double();
-                        this.drawRoute(pathB, between);
+                        this.drawRoute(pathB, coordinates.subList(indexA, Math.min(indexB + 1, coordinates.size())));
                         g2d.setColor(BIKE);
                         g2d.draw(pathB);
 
                         Path2D pathC = new Path2D.Double();
-                        this.drawRoute(pathC, after);
+                        this.drawRoute(pathC, coordinates.subList(Math.min(indexB, coordinates.size()), coordinates.size()));
                         g2d.setColor(FOOT);
                         g2d.draw(pathC);
                     }
