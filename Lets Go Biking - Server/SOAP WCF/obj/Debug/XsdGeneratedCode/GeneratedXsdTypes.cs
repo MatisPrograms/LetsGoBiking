@@ -2062,6 +2062,107 @@ namespace SOAP_WCF.ContractTypes
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
+    public partial class Address
+    {
+        
+        private double latField;
+        
+        private bool latFieldSpecified;
+        
+        private double lngField;
+        
+        private bool lngFieldSpecified;
+        
+        /// <remarks/>
+        public double lat
+        {
+            get
+            {
+                return this.latField;
+            }
+            set
+            {
+                this.latField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool latSpecified
+        {
+            get
+            {
+                return this.latFieldSpecified;
+            }
+            set
+            {
+                this.latFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double lng
+        {
+            get
+            {
+                return this.lngField;
+            }
+            set
+            {
+                this.lngField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool lngSpecified
+        {
+            get
+            {
+                return this.lngFieldSpecified;
+            }
+            set
+            {
+                this.lngFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "17.4.0+18d5aef85920037c9d6ff49b1215a4daf515197f")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
+    public partial class AddressResponse
+    {
+        
+        private string[] addressResultField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] AddressResult
+        {
+            get
+            {
+                return this.addressResultField;
+            }
+            set
+            {
+                this.addressResultField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "17.4.0+18d5aef85920037c9d6ff49b1215a4daf515197f")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Proxy_WCF")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schemas.datacontract.org/2004/07/Proxy_WCF", IsNullable=true)]
     public partial class ArrayOfContract

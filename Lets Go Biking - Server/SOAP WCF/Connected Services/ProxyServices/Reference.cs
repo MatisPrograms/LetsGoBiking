@@ -1345,6 +1345,12 @@ namespace SOAP_WCF.ProxyServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOpenStreetMapAPI/Route", ReplyAction="http://tempuri.org/IOpenStreetMapAPI/RouteResponse")]
         System.Threading.Tasks.Task<SOAP_WCF.ProxyServices.Route> RouteAsync(System.Device.Location.GeoCoordinate start, System.Device.Location.GeoCoordinate end, string transport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOpenStreetMapAPI/Address", ReplyAction="http://tempuri.org/IOpenStreetMapAPI/AddressResponse")]
+        string[] Address(double lat, double lng);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOpenStreetMapAPI/Address", ReplyAction="http://tempuri.org/IOpenStreetMapAPI/AddressResponse")]
+        System.Threading.Tasks.Task<string[]> AddressAsync(double lat, double lng);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1396,6 +1402,14 @@ namespace SOAP_WCF.ProxyServices {
         
         public System.Threading.Tasks.Task<SOAP_WCF.ProxyServices.Route> RouteAsync(System.Device.Location.GeoCoordinate start, System.Device.Location.GeoCoordinate end, string transport) {
             return base.Channel.RouteAsync(start, end, transport);
+        }
+        
+        public string[] Address(double lat, double lng) {
+            return base.Channel.Address(lat, lng);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> AddressAsync(double lat, double lng) {
+            return base.Channel.AddressAsync(lat, lng);
         }
     }
 }

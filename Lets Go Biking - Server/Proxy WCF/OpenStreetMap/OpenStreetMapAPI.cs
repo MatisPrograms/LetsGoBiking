@@ -33,7 +33,6 @@ namespace Proxy_WCF
         {
             if (memoryCache.Contains(url))
             {
-                Console.WriteLine(url + ": Fetched from Cache");
                 return (string)memoryCache.GetCacheItem(url).Value;
             }
             else
@@ -81,6 +80,18 @@ namespace Proxy_WCF
             {
                 string positions = "&point=" + start.Latitude + "%2C" + start.Longitude + "&point=" + end.Latitude + "%2C" + end.Longitude;
                 return JsonConvert.DeserializeObject<Route>(getFromUrlAsync(apiUrlGH + transport + paramsGH + positions).Result);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public string[] Address(double lat, double lng)
+        {
+            try
+            {
+                return Querry(lat + "," + lng)[0].display_name.Split(new string[] { ", " }, StringSplitOptions.None);
             }
             catch
             {

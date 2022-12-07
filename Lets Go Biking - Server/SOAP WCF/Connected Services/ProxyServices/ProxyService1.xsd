@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Proxy_WCF" />
   <xs:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Device.Location" />
+  <xs:import schemaLocation="http://localhost:8088/ProxyService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="Contracts">
     <xs:complexType>
       <xs:sequence />
@@ -69,6 +70,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Proxy_WCF" minOccurs="0" name="RouteResult" nillable="true" type="q7:Route" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lat" type="xs:double" />
+        <xs:element minOccurs="0" name="lng" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AddressResult" nillable="true" type="q8:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

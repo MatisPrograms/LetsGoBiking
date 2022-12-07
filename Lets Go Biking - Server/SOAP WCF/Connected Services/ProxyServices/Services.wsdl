@@ -53,6 +53,12 @@
   <wsdl:message name="IOpenStreetMapAPI_Route_OutputMessage">
     <wsdl:part name="parameters" element="tns:RouteResponse" />
   </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_Address_InputMessage">
+    <wsdl:part name="parameters" element="tns:Address" />
+  </wsdl:message>
+  <wsdl:message name="IOpenStreetMapAPI_Address_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddressResponse" />
+  </wsdl:message>
   <wsdl:portType name="IJCDecauxAPI">
     <wsdl:operation name="Contracts">
       <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxAPI/Contracts" message="tns:IJCDecauxAPI_Contracts_InputMessage" />
@@ -75,6 +81,10 @@
     <wsdl:operation name="Route">
       <wsdl:input wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/Route" message="tns:IOpenStreetMapAPI_Route_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/RouteResponse" message="tns:IOpenStreetMapAPI_Route_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Address">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/Address" message="tns:IOpenStreetMapAPI_Address_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpenStreetMapAPI/AddressResponse" message="tns:IOpenStreetMapAPI_Address_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IJCDecauxAPI" type="tns:IJCDecauxAPI">
@@ -122,6 +132,15 @@
     </wsdl:operation>
     <wsdl:operation name="Route">
       <soap12:operation soapAction="http://tempuri.org/IOpenStreetMapAPI/Route" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Address">
+      <soap12:operation soapAction="http://tempuri.org/IOpenStreetMapAPI/Address" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

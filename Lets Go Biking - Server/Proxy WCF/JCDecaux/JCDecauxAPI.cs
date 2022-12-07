@@ -22,7 +22,6 @@ namespace Proxy_WCF
             url = apiUrl + url + apiKey;
             if (memoryCache.Contains(url))
             {
-                Console.WriteLine(url + ": Fetched from Cache");
                 return (string)memoryCache.GetCacheItem(url).Value;
             }
             else

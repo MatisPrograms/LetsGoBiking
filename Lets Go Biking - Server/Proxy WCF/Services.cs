@@ -33,5 +33,10 @@ namespace Proxy_WCF
         {
             return OpenStreetMap.Route(start, end, transport);
         }
+
+        public string[] Address(double lat, double lng)
+        {
+            return OpenStreetMap.Address(lat, lng);
+        }
     }
 }

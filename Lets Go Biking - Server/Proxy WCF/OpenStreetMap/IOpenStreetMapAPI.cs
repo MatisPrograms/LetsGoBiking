@@ -16,6 +16,9 @@ namespace Proxy_WCF
 
         [OperationContract]
         Route Route(GeoCoordinate start, GeoCoordinate end, string transport);
+
+        [OperationContract]
+        string[] Address(double lat, double lng);
     }
 
 

@@ -34,6 +34,9 @@ namespace SOAP_WCF
             double minDistance = double.MaxValue;
             foreach (Contract contract in contracts)
             {
+                if (!contract.cities.Any(c => OSM.Address(a.Latitude, a.Longitude).Select(ad => ad.ToLower()).Contains(c.ToLower())) 
+                    || !contract.cities.Any(c => OSM.Address(b.Latitude, b.Longitude).Select(ad => ad.ToLower()).Contains(c.ToLower()))) continue;
+
                 if (JCD.Stations(contract.name) == null) continue;
 
                 Station[] stations = JCD.Stations(contract.name).Where(station => station.status == "OPEN").ToArray();
